@@ -1,0 +1,38 @@
+{
+    "name": "docusign/admin-client",
+    "description": "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-admin-php-client repository.",
+    "keywords": [
+        "DocuSign",
+        "Admin",
+        "php",
+        "sdk",
+        "api"
+    ],
+    "homepage": "https://developers.docusign.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DocuSign",
+            "homepage": "https://developers.docusign.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "firebase/php-jwt": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "satooshi/php-coveralls": "~1.0",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "*"
+    },
+    "autoload": {
+        "psr-4": { "DocuSign\\Admin\\" : "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "DocuSign\\Admin\\" : "test/" }
+    }
+}
