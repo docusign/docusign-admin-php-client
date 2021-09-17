@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -45,7 +46,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class BulkExportsApi
@@ -61,6 +63,7 @@ class BulkExportsApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -94,9 +97,9 @@ class BulkExportsApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -117,6 +120,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationAccountsRequest $request Request body containing details about the accounts be compared (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportResponse
      */
@@ -133,6 +137,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationAccountsRequest $request Request body containing details about the accounts be compared (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -209,6 +214,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationExportRequest $request Request body containing details about what is to be exported (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportResponse
      */
@@ -225,6 +231,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationExportRequest $request Request body containing details about what is to be exported (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -301,6 +308,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return object
      */
@@ -317,6 +325,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -392,6 +401,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return object
      */
@@ -408,6 +418,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -483,6 +494,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportResponse
      */
@@ -499,6 +511,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -573,6 +586,7 @@ class BulkExportsApi
      * Returns the details/metadata for Account Setting Export requests
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportsResponse
      */
@@ -588,6 +602,7 @@ class BulkExportsApi
      * Returns the details/metadata for Account Setting Export requests
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportsResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -655,6 +670,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportResponse
      */
@@ -671,6 +687,7 @@ class BulkExportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $export_id The export ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -745,6 +762,7 @@ class BulkExportsApi
      * Returns a list of existing User List Exports (requests and completed exports) and their details/metadata
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationExportsResponse
      */
@@ -760,6 +778,7 @@ class BulkExportsApi
      * Returns a list of existing User List Exports (requests and completed exports) and their details/metadata
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationExportsResponse, HTTP status code, HTTP response headers (array of strings)
      */

@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -32,6 +33,15 @@ declare(strict_types=1);
 namespace DocuSign\Admin\Api\DSGroupsApi;
 
 
+/**
+ * GetDSGroupUsersOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetDSGroupUsersOptions
 {
     /**
@@ -42,6 +52,7 @@ class GetDSGroupUsersOptions
 
     /**
      * Gets page
+     *
      * @return ?int
      */
     public function getPage(): ?int
@@ -52,6 +63,7 @@ class GetDSGroupUsersOptions
     /**
      * Sets page
      * @param ?int $page Start page of dsgroup users
+     *
      * @return self
      */
     public function setPage(?int $page): self
@@ -67,6 +79,7 @@ class GetDSGroupUsersOptions
 
     /**
      * Gets page_size
+     *
      * @return ?int
      */
     public function getPageSize(): ?int
@@ -77,6 +90,7 @@ class GetDSGroupUsersOptions
     /**
      * Sets page_size
      * @param ?int $page_size Page size of dsgroup users
+     *
      * @return self
      */
     public function setPageSize(?int $page_size): self
@@ -87,6 +101,15 @@ class GetDSGroupUsersOptions
 }
 
 
+/**
+ * GetDSGroupsOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetDSGroupsOptions
 {
     /**
@@ -97,6 +120,7 @@ class GetDSGroupsOptions
 
     /**
      * Gets page
+     *
      * @return ?int
      */
     public function getPage(): ?int
@@ -107,6 +131,7 @@ class GetDSGroupsOptions
     /**
      * Sets page
      * @param ?int $page Start page of dsgroups
+     *
      * @return self
      */
     public function setPage(?int $page): self
@@ -122,6 +147,7 @@ class GetDSGroupsOptions
 
     /**
      * Gets page_size
+     *
      * @return ?int
      */
     public function getPageSize(): ?int
@@ -132,6 +158,7 @@ class GetDSGroupsOptions
     /**
      * Sets page_size
      * @param ?int $page_size Page size of dsgroups
+     *
      * @return self
      */
     public function setPageSize(?int $page_size): self
@@ -155,7 +182,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DSGroupsApi
@@ -171,6 +199,7 @@ class DSGroupsApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -204,9 +233,9 @@ class DSGroupsApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -228,6 +257,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param \DocuSign\Admin\Model\DSGroupAddRequest $add_request Add DSGroup request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupResponse
      */
@@ -245,6 +275,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param \DocuSign\Admin\Model\DSGroupAddRequest $add_request Add DSGroup request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -331,6 +362,7 @@ class DSGroupsApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
      * @param \DocuSign\Admin\Model\DSGroupUsersAddRequest $d_s_group_users_add_request Add DSGroup users request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\AddDSGroupAndUsersResponse
      */
@@ -349,6 +381,7 @@ class DSGroupsApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
      * @param \DocuSign\Admin\Model\DSGroupUsersAddRequest $d_s_group_users_add_request Add DSGroup users request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\AddDSGroupAndUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -442,6 +475,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return mixed
      */
@@ -459,6 +493,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -539,6 +574,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The dsGroup ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupResponse
      */
@@ -556,6 +592,7 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The dsGroup ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -640,7 +677,8 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
-     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupAndUsersResponse
      */
@@ -658,7 +696,8 @@ class DSGroupsApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
-     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupAndUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -752,7 +791,8 @@ class DSGroupsApi
      *
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
-     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupListResponse
      */
@@ -769,7 +809,8 @@ class DSGroupsApi
      *
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
-     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupListResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -857,6 +898,7 @@ class DSGroupsApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
      * @param \DocuSign\Admin\Model\DSGroupUsersRemoveRequest $d_s_group_users_remove_request Remove DSGroup users request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\RemoveDSGroupUsersResponse
      */
@@ -875,6 +917,7 @@ class DSGroupsApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $ds_group_id The DSGroup ID GUID
      * @param \DocuSign\Admin\Model\DSGroupUsersRemoveRequest $d_s_group_users_remove_request Remove DSGroup users request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\RemoveDSGroupUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */

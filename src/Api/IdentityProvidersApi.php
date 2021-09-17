@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -45,7 +46,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class IdentityProvidersApi
@@ -61,6 +63,7 @@ class IdentityProvidersApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -94,9 +97,9 @@ class IdentityProvidersApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -116,6 +119,7 @@ class IdentityProvidersApi
      * Returns the list of identity providers for the organization.
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\IdentityProvidersResponse
      */
@@ -131,6 +135,7 @@ class IdentityProvidersApi
      * Returns the list of identity providers for the organization.
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\IdentityProvidersResponse, HTTP status code, HTTP response headers (array of strings)
      */

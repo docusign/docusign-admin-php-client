@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -32,6 +33,15 @@ declare(strict_types=1);
 namespace DocuSign\Admin\Api\UsersApi;
 
 
+/**
+ * GetUserProfilesOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetUserProfilesOptions
 {
     /**
@@ -42,6 +52,7 @@ class GetUserProfilesOptions
 
     /**
      * Gets email
+     *
      * @return ?string
      */
     public function getEmail(): ?string
@@ -52,6 +63,7 @@ class GetUserProfilesOptions
     /**
      * Sets email
      * @param ?string $email The email address
+     *
      * @return self
      */
     public function setEmail(?string $email): self
@@ -62,6 +74,15 @@ class GetUserProfilesOptions
 }
 
 
+/**
+ * GetUsersOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetUsersOptions
 {
     /**
@@ -72,6 +93,7 @@ class GetUsersOptions
 
     /**
      * Gets start
+     *
      * @return ?int
      */
     public function getStart(): ?int
@@ -82,6 +104,7 @@ class GetUsersOptions
     /**
      * Sets start
      * @param ?int $start Index of first item to include in the response  Default value: 0
+     *
      * @return self
      */
     public function setStart(?int $start): self
@@ -97,6 +120,7 @@ class GetUsersOptions
 
     /**
      * Gets take
+     *
      * @return ?int
      */
     public function getTake(): ?int
@@ -107,6 +131,7 @@ class GetUsersOptions
     /**
      * Sets take
      * @param ?int $take Page size of the response  Default value: 20
+     *
      * @return self
      */
     public function setTake(?int $take): self
@@ -122,6 +147,7 @@ class GetUsersOptions
 
     /**
      * Gets end
+     *
      * @return ?int
      */
     public function getEnd(): ?int
@@ -132,6 +158,7 @@ class GetUsersOptions
     /**
      * Sets end
      * @param ?int $end Index of the last item to include in the response. Ignored if 'take' parameter is specfied
+     *
      * @return self
      */
     public function setEnd(?int $end): self
@@ -147,6 +174,7 @@ class GetUsersOptions
 
     /**
      * Gets email
+     *
      * @return ?string
      */
     public function getEmail(): ?string
@@ -157,6 +185,7 @@ class GetUsersOptions
     /**
      * Sets email
      * @param ?string $email Email address of the desired user. At least one of email, account_id or organization_reserved_domain_id must be specified.
+     *
      * @return self
      */
     public function setEmail(?string $email): self
@@ -172,6 +201,7 @@ class GetUsersOptions
 
     /**
      * Gets email_user_name_like
+     *
      * @return ?string
      */
     public function getEmailUserNameLike(): ?string
@@ -182,6 +212,7 @@ class GetUsersOptions
     /**
      * Sets email_user_name_like
      * @param ?string $email_user_name_like Selects users by pattern matching on the user's email address
+     *
      * @return self
      */
     public function setEmailUserNameLike(?string $email_user_name_like): self
@@ -197,6 +228,7 @@ class GetUsersOptions
 
     /**
      * Gets status
+     *
      * @return ?string
      */
     public function getStatus(): ?string
@@ -207,6 +239,7 @@ class GetUsersOptions
     /**
      * Sets status
      * @param ?string $status Select users based on user status
+     *
      * @return self
      */
     public function setStatus(?string $status): self
@@ -222,6 +255,7 @@ class GetUsersOptions
 
     /**
      * Gets membership_status
+     *
      * @return ?string
      */
     public function getMembershipStatus(): ?string
@@ -232,6 +266,7 @@ class GetUsersOptions
     /**
      * Sets membership_status
      * @param ?string $membership_status Select users based on membership status
+     *
      * @return self
      */
     public function setMembershipStatus(?string $membership_status): self
@@ -247,6 +282,7 @@ class GetUsersOptions
 
     /**
      * Gets account_id
+     *
      * @return ?string
      */
     public function getAccountId(): ?string
@@ -257,6 +293,7 @@ class GetUsersOptions
     /**
      * Sets account_id
      * @param ?string $account_id Select users that are members of the specified account. At least one of email, account_id or organization_reserved_domain_id must be specified.
+     *
      * @return self
      */
     public function setAccountId(?string $account_id): self
@@ -272,6 +309,7 @@ class GetUsersOptions
 
     /**
      * Gets organization_reserved_domain_id
+     *
      * @return ?string
      */
     public function getOrganizationReservedDomainId(): ?string
@@ -282,6 +320,7 @@ class GetUsersOptions
     /**
      * Sets organization_reserved_domain_id
      * @param ?string $organization_reserved_domain_id Select users that are in the specified domain. At least one of email, account_id or organization_reserved_domain_id must be specified.
+     *
      * @return self
      */
     public function setOrganizationReservedDomainId(?string $organization_reserved_domain_id): self
@@ -297,6 +336,7 @@ class GetUsersOptions
 
     /**
      * Gets last_modified_since
+     *
      * @return ?string
      */
     public function getLastModifiedSince(): ?string
@@ -307,6 +347,7 @@ class GetUsersOptions
     /**
      * Sets last_modified_since
      * @param ?string $last_modified_since Select users whose data have been modified since the date specified;  account_id or organization_reserved_domain_id must be specified.
+     *
      * @return self
      */
     public function setLastModifiedSince(?string $last_modified_since): self
@@ -330,7 +371,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class UsersApi
@@ -346,6 +388,7 @@ class UsersApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -379,9 +422,9 @@ class UsersApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -404,6 +447,7 @@ class UsersApi
      * @param ?string $user_id The user ID Guid
      * @param ?string $membership_id The membership ID Guid
      * @param \DocuSign\Admin\Model\ForceActivateMembershipRequest $request Additional details about the user&#39;s membership (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UpdateResponse
      */
@@ -422,6 +466,7 @@ class UsersApi
      * @param ?string $user_id The user ID Guid
      * @param ?string $membership_id The membership ID Guid
      * @param \DocuSign\Admin\Model\ForceActivateMembershipRequest $request Additional details about the user&#39;s membership (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -515,6 +560,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param \DocuSign\Admin\Model\NewMultiProductUserAddRequest $request The request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\AddUserResponse
      */
@@ -532,6 +578,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param \DocuSign\Admin\Model\NewMultiProductUserAddRequest $request The request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\AddUserResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -617,6 +664,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
      * @param \DocuSign\Admin\Model\NewAccountUserRequest $request The details for the users to add to the account (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\NewUserResponse
      */
@@ -634,6 +682,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
      * @param \DocuSign\Admin\Model\NewAccountUserRequest $request The details for the users to add to the account (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\NewUserResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -719,6 +768,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $user_id The user ID Guid
      * @param \DocuSign\Admin\Model\DeleteMembershipsRequest $request The details about which membership to close (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DeleteMembershipsResponse
      */
@@ -736,6 +786,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $user_id The user ID Guid
      * @param \DocuSign\Admin\Model\DeleteMembershipsRequest $request The details about which membership to close (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DeleteMembershipsResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -820,6 +871,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\NewUserRequest $request Details about the user to be added (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\NewUserResponse
      */
@@ -836,6 +888,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\NewUserRequest $request Details about the user to be added (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\NewUserResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -913,6 +966,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $user_id The user ID Guid
      * @param \DocuSign\Admin\Model\DeleteUserIdentityRequest $request_model The details for the user identities to be deleted (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DeleteResponse
      */
@@ -930,6 +984,7 @@ class UsersApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $user_id The user ID Guid
      * @param \DocuSign\Admin\Model\DeleteUserIdentityRequest $request_model The details for the user identities to be deleted (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DeleteResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1013,7 +1068,8 @@ class UsersApi
      * Returns user information.
      *
      * @param ?string $organization_id The organization ID Guid
-     * @param  \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersDrilldownResponse
      */
@@ -1029,7 +1085,8 @@ class UsersApi
      * Returns user information.
      *
      * @param ?string $organization_id The organization ID Guid
-     * @param  \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1103,7 +1160,8 @@ class UsersApi
      * Returns information about the users in the organization
      *
      * @param ?string $organization_id The organization ID Guid
-     * @param  \DocuSign\Admin\Api\UsersApi\GetUsersOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUsersOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationUsersResponse
      */
@@ -1119,7 +1177,8 @@ class UsersApi
      * Returns information about the users in the organization
      *
      * @param ?string $organization_id The organization ID Guid
-     * @param  \DocuSign\Admin\Api\UsersApi\GetUsersOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUsersOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1221,6 +1280,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersEmailRequest $request The details about which email addresses to update (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersUpdateResponse
      */
@@ -1237,6 +1297,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersEmailRequest $request The details about which email addresses to update (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1313,6 +1374,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersRequest $request The user details to update (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersUpdateResponse
      */
@@ -1329,6 +1391,7 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersRequest $request The user details to update (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */

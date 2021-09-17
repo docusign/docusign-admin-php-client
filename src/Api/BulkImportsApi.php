@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -45,7 +46,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class BulkImportsApi
@@ -61,6 +63,7 @@ class BulkImportsApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -94,9 +97,9 @@ class BulkImportsApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -117,6 +120,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse
      */
@@ -133,6 +137,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -214,6 +219,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -230,6 +236,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -310,6 +317,7 @@ class BulkImportsApi
      * Closes the Bulk User Import request
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -325,6 +333,7 @@ class BulkImportsApi
      * Closes the Bulk User Import request
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -391,6 +400,7 @@ class BulkImportsApi
      * Closes memberships which are not in an account which is part of the organization, but which do have email addresses which are @ a verified reserved web domain which belongs to the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -406,6 +416,7 @@ class BulkImportsApi
      * Closes memberships which are not in an account which is part of the organization, but which do have email addresses which are @ a verified reserved web domain which belongs to the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -474,6 +485,7 @@ class BulkImportsApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -491,6 +503,7 @@ class BulkImportsApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -581,6 +594,7 @@ class BulkImportsApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -598,6 +612,7 @@ class BulkImportsApi
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -687,6 +702,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -703,6 +719,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
     * @param \SplFileObject $file_csv CSV file. (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -784,6 +801,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return object
      */
@@ -800,6 +818,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -875,6 +894,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return object
      */
@@ -891,6 +911,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -966,6 +987,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse
      */
@@ -982,6 +1004,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1056,6 +1079,7 @@ class BulkImportsApi
      * Returns the details/metadata for Bulk Account Settings Import requests in the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse[]
      */
@@ -1071,6 +1095,7 @@ class BulkImportsApi
      * Returns the details/metadata for Bulk Account Settings Import requests in the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationAccountSettingsImportResponse[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -1138,6 +1163,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return object
      */
@@ -1154,6 +1180,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1229,6 +1256,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
@@ -1245,6 +1273,7 @@ class BulkImportsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $import_id The import ID Guid for the request
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1319,6 +1348,7 @@ class BulkImportsApi
      * Returns the details/metadata for Bulk User Import requests in the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportsResponse
      */
@@ -1334,6 +1364,7 @@ class BulkImportsApi
      * Returns the details/metadata for Bulk User Import requests in the organization
      *
      * @param ?string $organization_id The organization ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportsResponse, HTTP status code, HTTP response headers (array of strings)
      */

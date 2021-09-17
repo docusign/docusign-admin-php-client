@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -45,7 +46,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ProductPermissionProfilesApi
@@ -61,6 +63,7 @@ class ProductPermissionProfilesApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -94,9 +97,9 @@ class ProductPermissionProfilesApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -119,6 +122,7 @@ class ProductPermissionProfilesApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $user_id The user ID GUID
      * @param \DocuSign\Admin\Model\ProductPermissionProfilesRequest $product_permission_profiles_request Request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UserProductPermissionProfilesResponse
      */
@@ -137,6 +141,7 @@ class ProductPermissionProfilesApi
      * @param ?string $account_id The account ID GUID
      * @param ?string $user_id The user ID GUID
      * @param \DocuSign\Admin\Model\ProductPermissionProfilesRequest $product_permission_profiles_request Request object (required)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UserProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -229,6 +234,7 @@ class ProductPermissionProfilesApi
      *
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\ProductPermissionProfilesResponse
      */
@@ -245,6 +251,7 @@ class ProductPermissionProfilesApi
      *
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\ProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -321,6 +328,7 @@ class ProductPermissionProfilesApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $user_id The user ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\ProductPermissionProfilesResponse
      */
@@ -338,6 +346,7 @@ class ProductPermissionProfilesApi
      * @param ?string $organization_id The organization ID GUID
      * @param ?string $account_id The account ID GUID
      * @param ?string $user_id The user ID GUID
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\ProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
      */
