@@ -6,7 +6,8 @@
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swaagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -37,7 +38,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category    Class
  * @package     DocuSign\Admin
- * @author      Swagger Codegen team
+ * @author      Swagger Codegen team <apihelp@docusign.com>
+ * @license     The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class NewAccountUserRequest implements ModelInterface, ArrayAccess

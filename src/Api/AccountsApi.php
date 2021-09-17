@@ -8,7 +8,8 @@ declare(strict_types=1);
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -32,6 +33,15 @@ declare(strict_types=1);
 namespace DocuSign\Admin\Api\AccountsApi;
 
 
+/**
+ * GetGroupsOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetGroupsOptions
 {
     /**
@@ -42,6 +52,7 @@ class GetGroupsOptions
 
     /**
      * Gets start
+     *
      * @return ?int
      */
     public function getStart(): ?int
@@ -52,6 +63,7 @@ class GetGroupsOptions
     /**
      * Sets start
      * @param ?int $start Index of first item to include in the response  Default value: 0
+     *
      * @return self
      */
     public function setStart(?int $start): self
@@ -67,6 +79,7 @@ class GetGroupsOptions
 
     /**
      * Gets take
+     *
      * @return ?int
      */
     public function getTake(): ?int
@@ -77,6 +90,7 @@ class GetGroupsOptions
     /**
      * Sets take
      * @param ?int $take Page size of the response  Default value: 20
+     *
      * @return self
      */
     public function setTake(?int $take): self
@@ -92,6 +106,7 @@ class GetGroupsOptions
 
     /**
      * Gets end
+     *
      * @return ?int
      */
     public function getEnd(): ?int
@@ -102,6 +117,7 @@ class GetGroupsOptions
     /**
      * Sets end
      * @param ?int $end Index of the last item to include in the response. Ignored if 'take' parameter is specfied
+     *
      * @return self
      */
     public function setEnd(?int $end): self
@@ -112,6 +128,15 @@ class GetGroupsOptions
 }
 
 
+/**
+ * GetOrganizationsOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
 class GetOrganizationsOptions
 {
     /**
@@ -122,6 +147,7 @@ class GetOrganizationsOptions
 
     /**
      * Gets mode
+     *
      * @return ?string
      */
     public function getMode(): ?string
@@ -132,6 +158,7 @@ class GetOrganizationsOptions
     /**
      * Sets mode
      * @param ?string $mode Specifies how to select the organizations. Values: org_admin - will return organizations for which the user is an admin; account_membership: will return organizations that contain an account of which the user is a member  Default value: org_admin
+     *
      * @return self
      */
     public function setMode(?string $mode): self
@@ -155,7 +182,8 @@ use DocuSign\Admin\ObjectSerializer;
  *
  * @category Class
  * @package  DocuSign\Admin
- * @author   Swagger Codegen team
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class AccountsApi
@@ -171,6 +199,7 @@ class AccountsApi
      * Constructor
      *
      * @param ApiClient|null $apiClient The api client to use
+     *
      * @return void
      */
     public function __construct(ApiClient $apiClient = null)
@@ -204,9 +233,9 @@ class AccountsApi
     /**
     * Update $resourcePath with $
     *
-    * @param string $resourcePath
-    * @param string $baseName
-    * @param string $paramName
+    * @param string $resourcePath the resource path to use
+    * @param string $baseName the base name param
+    * @param string $paramName the parameter name
     *
     * @return string
     */
@@ -227,7 +256,8 @@ class AccountsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
-     * @param  \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\MemberGroupsResponse
      */
@@ -244,7 +274,8 @@ class AccountsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
-     * @param  \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\MemberGroupsResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -331,7 +362,8 @@ class AccountsApi
      *
      * Returns the list of organizations of which the authenticated user is a member.
      *
-     * @param  \DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationsResponse
      */
@@ -346,7 +378,8 @@ class AccountsApi
      *
      * Returns the list of organizations of which the authenticated user is a member.
      *
-     * @param  \DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions for modifying the behavior of the function. (optional)
+     * @param  \DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions  $options for modifying the behavior of the function. (optional)
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationsResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -413,6 +446,7 @@ class AccountsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\PermissionsResponse
      */
@@ -429,6 +463,7 @@ class AccountsApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param ?string $account_id The account ID Guid
+     *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\PermissionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
