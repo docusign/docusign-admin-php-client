@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -34,12 +34,121 @@ namespace DocuSign\Admin\Api\UsersApi;
 
 
 /**
+ * GetUserDSProfileOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class GetUserDSProfileOptions
+{
+    /**
+      * $sort Sorts user information by account name ascending
+      * @var ?bool
+      */
+    protected ?bool $sort = null;
+
+    /**
+     * Gets sort
+     *
+     * @return ?bool
+     */
+    public function getSort(): ?bool
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Sets sort
+     * @param ?bool $sort Sorts user information by account name ascending
+     *
+     * @return self
+     */
+    public function setSort(?bool $sort): self
+    {
+        $this->sort = $sort;
+        return $this;
+    }
+}
+
+
+/**
+ * GetUserDSProfilesByEmailOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class GetUserDSProfilesByEmailOptions
+{
+    /**
+      * $email The email address of the user
+      * @var ?string
+      */
+    protected ?string $email = null;
+
+    /**
+     * Gets email
+     *
+     * @return ?string
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    /**
+     * Sets email
+     * @param ?string $email The email address of the user
+     *
+     * @return self
+     */
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+        return $this;
+    }
+    /**
+      * $sort Sorts user information by account name ascending
+      * @var ?bool
+      */
+    protected ?bool $sort = null;
+
+    /**
+     * Gets sort
+     *
+     * @return ?bool
+     */
+    public function getSort(): ?bool
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Sets sort
+     * @param ?bool $sort Sorts user information by account name ascending
+     *
+     * @return self
+     */
+    public function setSort(?bool $sort): self
+    {
+        $this->sort = $sort;
+        return $this;
+    }
+}
+
+
+/**
  * GetUserProfilesOptions Class Doc Comment
  *
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUserProfilesOptions
@@ -80,7 +189,7 @@ class GetUserProfilesOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUsersOptions
@@ -372,7 +481,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class UsersApi
@@ -1054,6 +1163,203 @@ class UsersApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\DeleteResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUserDSProfile
+     *
+     * Returns user information using the userId for lookup.
+     *
+     * @param ?string $organization_id The organization ID Guid
+     * @param ?string $user_id The user ID Guid
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\UsersDrilldownResponse
+     */
+    public function getUserDSProfile($organization_id, $user_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null)
+    {
+        list($response) = $this->getUserDSProfileWithHttpInfo($organization_id, $user_id, $options);
+        return $response;
+    }
+
+    /**
+     * Operation getUserDSProfileWithHttpInfo
+     *
+     * Returns user information using the userId for lookup.
+     *
+     * @param ?string $organization_id The organization ID Guid
+     * @param ?string $user_id The user ID Guid
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUserDSProfileWithHttpInfo($organization_id, $user_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUserDSProfile');
+        }
+        // verify the required parameter 'user_id' is set
+        if ($user_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $user_id when calling getUserDSProfile');
+        }
+        // parse inputs
+        $resourcePath = "/v2.1/organizations/{organizationId}/users/{userId}/dsprofile";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        if ($options != null)
+        {
+            // query params
+            if ($options->getSort() != 'null') {
+                $queryParams['sort'] = $this->apiClient->getSerializer()->toQueryValue($options->getSort());
+            }
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+        // path params
+        if ($user_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "userId", $user_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\UsersDrilldownResponse',
+                '/v2.1/organizations/{organizationId}/users/{userId}/dsprofile'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\UsersDrilldownResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\UsersDrilldownResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUserDSProfilesByEmail
+     *
+     * Returns DS user profile information.
+     *
+     * @param ?string $organization_id The organization ID Guid
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\UsersDrilldownResponse
+     */
+    public function getUserDSProfilesByEmail($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null)
+    {
+        list($response) = $this->getUserDSProfilesByEmailWithHttpInfo($organization_id, $options);
+        return $response;
+    }
+
+    /**
+     * Operation getUserDSProfilesByEmailWithHttpInfo
+     *
+     * Returns DS user profile information.
+     *
+     * @param ?string $organization_id The organization ID Guid
+     * @param  \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUserDSProfilesByEmailWithHttpInfo($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUserDSProfilesByEmail');
+        }
+        // parse inputs
+        $resourcePath = "/v2.1/organizations/{organizationId}/users/dsprofile";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        if ($options != null)
+        {
+            // query params
+            if ($options->getEmail() != 'null') {
+                $queryParams['email'] = $this->apiClient->getSerializer()->toQueryValue($options->getEmail());
+            }
+            if ($options->getSort() != 'null') {
+                $queryParams['sort'] = $this->apiClient->getSerializer()->toQueryValue($options->getSort());
+            }
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\UsersDrilldownResponse',
+                '/v2.1/organizations/{organizationId}/users/dsprofile'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\UsersDrilldownResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\UsersDrilldownResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

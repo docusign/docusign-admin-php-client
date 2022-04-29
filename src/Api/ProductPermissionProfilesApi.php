@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -33,6 +33,47 @@ declare(strict_types=1);
 namespace DocuSign\Admin\Api\ProductPermissionProfilesApi;
 
 
+/**
+ * GetUserProductPermissionProfilesByEmailOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class GetUserProductPermissionProfilesByEmailOptions
+{
+    /**
+      * $email Email address of the requested user
+      * @var ?string
+      */
+    protected ?string $email = null;
+
+    /**
+     * Gets email
+     *
+     * @return ?string
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    /**
+     * Sets email
+     * @param ?string $email Email address of the requested user
+     *
+     * @return self
+     */
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
+        return $this;
+    }
+}
+
+
 
 namespace DocuSign\Admin\Api;
 
@@ -47,7 +88,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ProductPermissionProfilesApi
@@ -212,6 +253,110 @@ class ProductPermissionProfilesApi
                 $headerParams,
                 '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse',
                 '/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users/{userId}/permission_profiles'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addUserProductPermissionProfilesByEmail
+     *
+     * Assign user to permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param \DocuSign\Admin\Model\UserProductPermissionProfilesRequest $user_product_permission_profiles_request Request object (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\UserProductPermissionProfilesResponse
+     */
+    public function addUserProductPermissionProfilesByEmail($organization_id, $account_id, $user_product_permission_profiles_request)
+    {
+        list($response) = $this->addUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, $user_product_permission_profiles_request);
+        return $response;
+    }
+
+    /**
+     * Operation addUserProductPermissionProfilesByEmailWithHttpInfo
+     *
+     * Assign user to permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param \DocuSign\Admin\Model\UserProductPermissionProfilesRequest $user_product_permission_profiles_request Request object (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\UserProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, $user_product_permission_profiles_request): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling addUserProductPermissionProfilesByEmail');
+        }
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling addUserProductPermissionProfilesByEmail');
+        }
+        // verify the required parameter 'user_product_permission_profiles_request' is set
+        if ($user_product_permission_profiles_request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $user_product_permission_profiles_request when calling addUserProductPermissionProfilesByEmail');
+        }
+        // parse inputs
+        $resourcePath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // body params
+        $_tempBody = null;
+        if (isset($user_product_permission_profiles_request)) {
+            $_tempBody = $user_product_permission_profiles_request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse',
+                '/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse', $httpHeader), $statusCode, $httpHeader];
@@ -415,6 +560,212 @@ class ProductPermissionProfilesApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\ProductPermissionProfilesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUserProductPermissionProfilesByEmail
+     *
+     * Remove user from permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param  \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\UserProductPermissionProfilesResponse
+     */
+    public function getUserProductPermissionProfilesByEmail($organization_id, $account_id, \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null)
+    {
+        list($response) = $this->getUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, $options);
+        return $response;
+    }
+
+    /**
+     * Operation getUserProductPermissionProfilesByEmailWithHttpInfo
+     *
+     * Remove user from permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param  \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\UserProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getUserProductPermissionProfilesByEmail');
+        }
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling getUserProductPermissionProfilesByEmail');
+        }
+        // parse inputs
+        $resourcePath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        if ($options != null)
+        {
+            // query params
+            if ($options->getEmail() != 'null') {
+                $queryParams['email'] = $this->apiClient->getSerializer()->toQueryValue($options->getEmail());
+            }
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse',
+                '/v2.1/organizations/{organizationId}/accounts/{accountId}/products/permission_profiles/users'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\UserProductPermissionProfilesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation removeUserProductPermission
+     *
+     * Remove user from permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param \DocuSign\Admin\Model\UserProductProfileDeleteRequest $user_product_permission_profiles_request Request object (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\RemoveUserProductsResponse
+     */
+    public function removeUserProductPermission($organization_id, $account_id, $user_product_permission_profiles_request)
+    {
+        list($response) = $this->removeUserProductPermissionWithHttpInfo($organization_id, $account_id, $user_product_permission_profiles_request);
+        return $response;
+    }
+
+    /**
+     * Operation removeUserProductPermissionWithHttpInfo
+     *
+     * Remove user from permission profiles for one or more products
+     *
+     * @param ?string $organization_id The organization ID GUID
+     * @param ?string $account_id The account ID GUID
+     * @param \DocuSign\Admin\Model\UserProductProfileDeleteRequest $user_product_permission_profiles_request Request object (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\RemoveUserProductsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function removeUserProductPermissionWithHttpInfo($organization_id, $account_id, $user_product_permission_profiles_request): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling removeUserProductPermission');
+        }
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling removeUserProductPermission');
+        }
+        // verify the required parameter 'user_product_permission_profiles_request' is set
+        if ($user_product_permission_profiles_request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $user_product_permission_profiles_request when calling removeUserProductPermission');
+        }
+        // parse inputs
+        $resourcePath = "/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // body params
+        $_tempBody = null;
+        if (isset($user_product_permission_profiles_request)) {
+            $_tempBody = $user_product_permission_profiles_request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\RemoveUserProductsResponse',
+                '/v2.1/organizations/{organizationId}/accounts/{accountId}/products/users'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\RemoveUserProductsResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\RemoveUserProductsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

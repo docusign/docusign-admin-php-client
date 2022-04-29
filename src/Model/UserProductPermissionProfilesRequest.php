@@ -1,6 +1,6 @@
 <?php
 /**
- * OASIRROrganizationAccountSettingsErrorDataResponse
+ * UserProductPermissionProfilesRequest
  *
  * PHP version 7.4
  *
@@ -34,7 +34,7 @@ use \ArrayAccess;
 use DocuSign\Admin\ObjectSerializer;
 
 /**
- * OASIRROrganizationAccountSettingsErrorDataResponse Class Doc Comment
+ * UserProductPermissionProfilesRequest Class Doc Comment
  *
  * @category    Class
  * @package     DocuSign\Admin
@@ -42,7 +42,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterface, ArrayAccess
+class UserProductPermissionProfilesRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OASIRR_OrganizationAccountSettingsErrorDataResponse';
+    protected static $swaggerModelName = 'UserProductPermissionProfilesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account_id' => '?string',
-        'account_name' => '?string',
-        'error' => '?string',
-        'error_key' => '?string',
-        'setting_key' => '?string'
+        'email' => '?string',
+        'product_permission_profiles' => '\DocuSign\Admin\Model\ProductPermissionProfileRequest[]'
     ];
 
     /**
@@ -72,11 +69,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account_id' => null,
-        'account_name' => null,
-        'error' => null,
-        'error_key' => null,
-        'setting_key' => null
+        'email' => null,
+        'product_permission_profiles' => null
     ];
 
     /**
@@ -106,11 +100,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_id' => 'account_id',
-        'account_name' => 'account_name',
-        'error' => 'error',
-        'error_key' => 'error_key',
-        'setting_key' => 'setting_key'
+        'email' => 'email',
+        'product_permission_profiles' => 'product_permission_profiles'
     ];
 
     /**
@@ -119,11 +110,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'account_id' => 'setAccountId',
-        'account_name' => 'setAccountName',
-        'error' => 'setError',
-        'error_key' => 'setErrorKey',
-        'setting_key' => 'setSettingKey'
+        'email' => 'setEmail',
+        'product_permission_profiles' => 'setProductPermissionProfiles'
     ];
 
     /**
@@ -132,11 +120,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'account_id' => 'getAccountId',
-        'account_name' => 'getAccountName',
-        'error' => 'getError',
-        'error_key' => 'getErrorKey',
-        'setting_key' => 'getSettingKey'
+        'email' => 'getEmail',
+        'product_permission_profiles' => 'getProductPermissionProfiles'
     ];
 
     /**
@@ -199,11 +184,8 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
-        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['error_key'] = isset($data['error_key']) ? $data['error_key'] : null;
-        $this->container['setting_key'] = isset($data['setting_key']) ? $data['setting_key'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['product_permission_profiles'] = isset($data['product_permission_profiles']) ? $data['product_permission_profiles'] : null;
     }
 
     /**
@@ -215,6 +197,12 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
     {
         $invalidProperties = [];
 
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
+        if ($this->container['product_permission_profiles'] === null) {
+            $invalidProperties[] = "'product_permission_profiles' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -231,121 +219,49 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
 
 
     /**
-     * Gets account_id
+     * Gets email
      *
      * @return ?string
      */
-    public function getAccountId()
+    public function getEmail()
     {
-        return $this->container['account_id'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets account_id
+     * Sets email
      *
-     * @param ?string $account_id account_id
+     * @param ?string $email email
      *
      * @return $this
      */
-    public function setAccountId($account_id)
+    public function setEmail($email)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets account_name
+     * Gets product_permission_profiles
      *
-     * @return ?string
+     * @return \DocuSign\Admin\Model\ProductPermissionProfileRequest[]
      */
-    public function getAccountName()
+    public function getProductPermissionProfiles()
     {
-        return $this->container['account_name'];
+        return $this->container['product_permission_profiles'];
     }
 
     /**
-     * Sets account_name
+     * Sets product_permission_profiles
      *
-     * @param ?string $account_name account_name
+     * @param \DocuSign\Admin\Model\ProductPermissionProfileRequest[] $product_permission_profiles product_permission_profiles
      *
      * @return $this
      */
-    public function setAccountName($account_name)
+    public function setProductPermissionProfiles($product_permission_profiles)
     {
-        $this->container['account_name'] = $account_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     *
-     * @return ?string
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     *
-     * @param ?string $error error
-     *
-     * @return $this
-     */
-    public function setError($error)
-    {
-        $this->container['error'] = $error;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_key
-     *
-     * @return ?string
-     */
-    public function getErrorKey()
-    {
-        return $this->container['error_key'];
-    }
-
-    /**
-     * Sets error_key
-     *
-     * @param ?string $error_key error_key
-     *
-     * @return $this
-     */
-    public function setErrorKey($error_key)
-    {
-        $this->container['error_key'] = $error_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets setting_key
-     *
-     * @return ?string
-     */
-    public function getSettingKey()
-    {
-        return $this->container['setting_key'];
-    }
-
-    /**
-     * Sets setting_key
-     *
-     * @param ?string $setting_key setting_key
-     *
-     * @return $this
-     */
-    public function setSettingKey($setting_key)
-    {
-        $this->container['setting_key'] = $setting_key;
+        $this->container['product_permission_profiles'] = $product_permission_profiles;
 
         return $this;
     }
