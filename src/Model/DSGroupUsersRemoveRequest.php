@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category    Class
  * @package     DocuSign\Admin
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
+ * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
@@ -59,7 +59,8 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'user_ids' => '?string[]'
+        'user_ids' => '?string[]',
+        'user_emails' => '?string[]'
     ];
 
     /**
@@ -68,7 +69,8 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'user_ids' => 'uuid'
+        'user_ids' => 'uuid',
+        'user_emails' => null
     ];
 
     /**
@@ -98,7 +100,8 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user_ids' => 'user_ids'
+        'user_ids' => 'user_ids',
+        'user_emails' => 'user_emails'
     ];
 
     /**
@@ -107,7 +110,8 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user_ids' => 'setUserIds'
+        'user_ids' => 'setUserIds',
+        'user_emails' => 'setUserEmails'
     ];
 
     /**
@@ -116,7 +120,8 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user_ids' => 'getUserIds'
+        'user_ids' => 'getUserIds',
+        'user_emails' => 'getUserEmails'
     ];
 
     /**
@@ -180,6 +185,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['user_ids'] = isset($data['user_ids']) ? $data['user_ids'] : null;
+        $this->container['user_emails'] = isset($data['user_emails']) ? $data['user_emails'] : null;
     }
 
     /**
@@ -191,9 +197,6 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['user_ids'] === null) {
-            $invalidProperties[] = "'user_ids' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -232,6 +235,30 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets user_emails
+     *
+     * @return ?string[]
+     */
+    public function getUserEmails()
+    {
+        return $this->container['user_emails'];
+    }
+
+    /**
+     * Sets user_emails
+     *
+     * @param ?string[] $user_emails user_emails
+     *
+     * @return $this
+     */
+    public function setUserEmails($user_emails)
+    {
+        $this->container['user_emails'] = $user_emails;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -239,6 +266,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -251,6 +279,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -264,6 +293,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -280,6 +310,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -1,6 +1,6 @@
 <?php
 /**
- * OASIRROrganizationAccountSettingsErrorDataResponse
+ * UserProductProfileDeleteRequest
  *
  * PHP version 7.4
  *
@@ -34,7 +34,7 @@ use \ArrayAccess;
 use DocuSign\Admin\ObjectSerializer;
 
 /**
- * OASIRROrganizationAccountSettingsErrorDataResponse Class Doc Comment
+ * UserProductProfileDeleteRequest Class Doc Comment
  *
  * @category    Class
  * @package     DocuSign\Admin
@@ -42,7 +42,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterface, ArrayAccess
+class UserProductProfileDeleteRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OASIRR_OrganizationAccountSettingsErrorDataResponse';
+    protected static $swaggerModelName = 'UserProductProfileDeleteRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account_id' => '?string',
-        'account_name' => '?string',
-        'error' => '?string',
-        'error_key' => '?string',
-        'setting_key' => '?string'
+        'user_email' => '?string',
+        'user_id' => '?string',
+        'product_ids' => '?string[]'
     ];
 
     /**
@@ -72,11 +70,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account_id' => null,
-        'account_name' => null,
-        'error' => null,
-        'error_key' => null,
-        'setting_key' => null
+        'user_email' => null,
+        'user_id' => 'uuid',
+        'product_ids' => 'uuid'
     ];
 
     /**
@@ -106,11 +102,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_id' => 'account_id',
-        'account_name' => 'account_name',
-        'error' => 'error',
-        'error_key' => 'error_key',
-        'setting_key' => 'setting_key'
+        'user_email' => 'user_email',
+        'user_id' => 'user_id',
+        'product_ids' => 'product_ids'
     ];
 
     /**
@@ -119,11 +113,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'account_id' => 'setAccountId',
-        'account_name' => 'setAccountName',
-        'error' => 'setError',
-        'error_key' => 'setErrorKey',
-        'setting_key' => 'setSettingKey'
+        'user_email' => 'setUserEmail',
+        'user_id' => 'setUserId',
+        'product_ids' => 'setProductIds'
     ];
 
     /**
@@ -132,11 +124,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'account_id' => 'getAccountId',
-        'account_name' => 'getAccountName',
-        'error' => 'getError',
-        'error_key' => 'getErrorKey',
-        'setting_key' => 'getSettingKey'
+        'user_email' => 'getUserEmail',
+        'user_id' => 'getUserId',
+        'product_ids' => 'getProductIds'
     ];
 
     /**
@@ -199,11 +189,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
-        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['error_key'] = isset($data['error_key']) ? $data['error_key'] : null;
-        $this->container['setting_key'] = isset($data['setting_key']) ? $data['setting_key'] : null;
+        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['product_ids'] = isset($data['product_ids']) ? $data['product_ids'] : null;
     }
 
     /**
@@ -215,6 +203,9 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
     {
         $invalidProperties = [];
 
+        if ($this->container['product_ids'] === null) {
+            $invalidProperties[] = "'product_ids' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -231,121 +222,73 @@ class OASIRROrganizationAccountSettingsErrorDataResponse implements ModelInterfa
 
 
     /**
-     * Gets account_id
+     * Gets user_email
      *
      * @return ?string
      */
-    public function getAccountId()
+    public function getUserEmail()
     {
-        return $this->container['account_id'];
+        return $this->container['user_email'];
     }
 
     /**
-     * Sets account_id
+     * Sets user_email
      *
-     * @param ?string $account_id account_id
+     * @param ?string $user_email user_email
      *
      * @return $this
      */
-    public function setAccountId($account_id)
+    public function setUserEmail($user_email)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['user_email'] = $user_email;
 
         return $this;
     }
 
     /**
-     * Gets account_name
+     * Gets user_id
      *
      * @return ?string
      */
-    public function getAccountName()
+    public function getUserId()
     {
-        return $this->container['account_name'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets account_name
+     * Sets user_id
      *
-     * @param ?string $account_name account_name
+     * @param ?string $user_id user_id
      *
      * @return $this
      */
-    public function setAccountName($account_name)
+    public function setUserId($user_id)
     {
-        $this->container['account_name'] = $account_name;
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }
 
     /**
-     * Gets error
+     * Gets product_ids
      *
-     * @return ?string
+     * @return ?string[]
      */
-    public function getError()
+    public function getProductIds()
     {
-        return $this->container['error'];
+        return $this->container['product_ids'];
     }
 
     /**
-     * Sets error
+     * Sets product_ids
      *
-     * @param ?string $error error
+     * @param ?string[] $product_ids product_ids
      *
      * @return $this
      */
-    public function setError($error)
+    public function setProductIds($product_ids)
     {
-        $this->container['error'] = $error;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_key
-     *
-     * @return ?string
-     */
-    public function getErrorKey()
-    {
-        return $this->container['error_key'];
-    }
-
-    /**
-     * Sets error_key
-     *
-     * @param ?string $error_key error_key
-     *
-     * @return $this
-     */
-    public function setErrorKey($error_key)
-    {
-        $this->container['error_key'] = $error_key;
-
-        return $this;
-    }
-
-    /**
-     * Gets setting_key
-     *
-     * @return ?string
-     */
-    public function getSettingKey()
-    {
-        return $this->container['setting_key'];
-    }
-
-    /**
-     * Sets setting_key
-     *
-     * @param ?string $setting_key setting_key
-     *
-     * @return $this
-     */
-    public function setSettingKey($setting_key)
-    {
-        $this->container['setting_key'] = $setting_key;
+        $this->container['product_ids'] = $product_ids;
 
         return $this;
     }
