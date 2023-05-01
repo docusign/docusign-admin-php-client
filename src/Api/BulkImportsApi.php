@@ -317,13 +317,14 @@ class BulkImportsApi
      * Closes the Bulk User Import request
      *
      * @param ?string $organization_id The organization ID Guid
+    * @param \SplFileObject $file_csv CSV file. (required)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationImportResponse
      */
-    public function createBulkImportCloseUsersRequest($organization_id)
+    public function createBulkImportCloseUsersRequest($organization_id, $file_csv)
     {
-        list($response) = $this->createBulkImportCloseUsersRequestWithHttpInfo($organization_id);
+        list($response) = $this->createBulkImportCloseUsersRequestWithHttpInfo($organization_id, $file_csv);
         return $response;
     }
 
@@ -333,22 +334,27 @@ class BulkImportsApi
      * Closes the Bulk User Import request
      *
      * @param ?string $organization_id The organization ID Guid
+    * @param \SplFileObject $file_csv CSV file. (required)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationImportResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createBulkImportCloseUsersRequestWithHttpInfo($organization_id): array
+    public function createBulkImportCloseUsersRequestWithHttpInfo($organization_id, $file_csv): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling createBulkImportCloseUsersRequest');
+        }
+        // verify the required parameter 'file_csv' is set
+        if ($file_csv === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file_csv when calling createBulkImportCloseUsersRequest');
         }
         // parse inputs
         $resourcePath = "/v2/organizations/{organizationId}/imports/bulk_users/close";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
 
 
         // path params
@@ -358,6 +364,16 @@ class BulkImportsApi
 
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // form params
+        if ($file_csv !== null) {
+            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
+            // See: https://wiki.php.net/rfc/curl-file-upload
+            if (function_exists('curl_file_create')) {
+                $formParams['file.csv'] = curl_file_create($this->apiClient->getSerializer()->toFormValue($file_csv));
+            } else {
+                $formParams['file.csv'] = '@' . $this->apiClient->getSerializer()->toFormValue($file_csv);
+            }
+        }
         
         // for model (json/xml)
         if (isset($_tempBody)) {
