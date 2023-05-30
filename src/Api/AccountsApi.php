@@ -531,4 +531,98 @@ class AccountsApi
             throw $e;
         }
     }
+
+    /**
+     * Operation redactIndividualMembershipData
+     *
+     * Redacts membership data for users with memberships in an account.
+     *
+     * @param ?string $account_id The account ID Guid
+     * @param \DocuSign\Admin\Model\IndividualMembershipDataRedactionRequest $request_model The request body describing the membership to be redacted (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\IndividualUserDataRedactionResponse
+     */
+    public function redactIndividualMembershipData($account_id, $request_model)
+    {
+        list($response) = $this->redactIndividualMembershipDataWithHttpInfo($account_id, $request_model);
+        return $response;
+    }
+
+    /**
+     * Operation redactIndividualMembershipDataWithHttpInfo
+     *
+     * Redacts membership data for users with memberships in an account.
+     *
+     * @param ?string $account_id The account ID Guid
+     * @param \DocuSign\Admin\Model\IndividualMembershipDataRedactionRequest $request_model The request body describing the membership to be redacted (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\IndividualUserDataRedactionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function redactIndividualMembershipDataWithHttpInfo($account_id, $request_model): array
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling redactIndividualMembershipData');
+        }
+        // verify the required parameter 'request_model' is set
+        if ($request_model === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request_model when calling redactIndividualMembershipData');
+        }
+        // parse inputs
+        $resourcePath = "/v2/data_redaction/accounts/{accountId}/user";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // body params
+        $_tempBody = null;
+        if (isset($request_model)) {
+            $_tempBody = $request_model;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\IndividualUserDataRedactionResponse',
+                '/v2/data_redaction/accounts/{accountId}/user'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\IndividualUserDataRedactionResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\IndividualUserDataRedactionResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
 }
