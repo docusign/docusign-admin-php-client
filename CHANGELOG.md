@@ -1,6 +1,16 @@
 # DocuSign Admin Java Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.0] - Admin API v2.1-1.3.0 - 2023-08-10
+### Changed
+- Added support for version v2.1-1.3.0 of the DocuSign Admin API.
+- Updated the SDK release version.
+
+New endpoints:
+* `GET /v1/organizations/{organizationId}/assetGroups/accounts` Get asset group accounts for an organization.
+* `POST /v1/organizations/{organizationId}/assetGroups/accountClone` Clone an existing DocuSign account.
+* `GET /v1/organizations/{organizationId}/assetGroups/accountClones` Gets all asset group account clones for an organization.
+* `GET /v1/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}` Gets information about a single cloned account.
 ## [v1.4.0-rc] - Admin API v2.1-1.3.0 - 2023-08-02
 ### Changed
 - Added support for version v2.1-1.3.0 of the DocuSign Admin API.
