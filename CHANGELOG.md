@@ -1,6 +1,9 @@
 # DocuSign Admin Java Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.1] - Admin API v2.1-1.3.0 - 2023-10-20
+### Changed
+forced $since_updated_date to be a nullable \DateType object
 ## [v1.4.0] - Admin API v2.1-1.3.0 - 2023-08-10
 ### Changed
 - Added support for version v2.1-1.3.0 of the DocuSign Admin API.

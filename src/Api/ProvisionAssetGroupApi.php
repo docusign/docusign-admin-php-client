@@ -87,9 +87,9 @@ class GetAssetGroupAccountClonesByOrgIdOptions
 {
     /**
       * $since_updated_date When provided and is in the past, only return asset group account clone(s) that is updated after the date.
-      * @var \DateTime
+      * @var ?\DateTime
       */
-    protected \DateTime $since_updated_date = null;
+    protected ?\DateTime $since_updated_date = null;
 
     /**
      * Gets since_updated_date
