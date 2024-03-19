@@ -1,6 +1,6 @@
 {
     "name": "docusign/admin-client",
-    "description": "The DocuSign package makes integrating DocuSign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-admin-php-client repository.",
+    "description": "The DocuSign Admin API enables you to automate user management with your existing systems while ensuring governance and compliance.",
     "keywords": [
         "DocuSign",
         "Admin",
@@ -21,7 +21,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "firebase/php-jwt": "^5.0"
+        "firebase/php-jwt": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8",
