@@ -1,10 +1,14 @@
 # DocuSign Admin Java Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.2] - Admin API v2.1-1.3.0 - 2024-04-22
+### Changed
+- Adjusted the minimum required firebase/php-jwt package version to 6.0.
+- Updated the SDK release version.
+
 ## [v1.4.2-rc1] - Admin API v2.1-1.3.0 - 2024-03-18
 ### Changed
 - Adjusted the minimum required firebase/php-jwt package version to 6.0.
-
 
 ## [v1.4.1] - Admin API v2.1-1.3.0 - 2023-10-20
 ### Changed
