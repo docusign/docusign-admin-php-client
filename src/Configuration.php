@@ -90,7 +90,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.docusign.net/Management';
+    protected $host = 'https://api.docusign.net/management';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout
@@ -111,7 +111,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/v2.1/1.4.2-rc1/php/' . PHP_VERSION;
+    protected $userAgent = 'Swagger-Codegen/v2.1/1.4.2/php/' . PHP_VERSION;
 
     /**
      * Debug switch (default set to false)
@@ -774,7 +774,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: v2.1' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.4.2-rc1' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.4.2' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
