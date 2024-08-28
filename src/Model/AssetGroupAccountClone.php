@@ -7,12 +7,12 @@
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -39,7 +39,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category    Class
  * @package     DocuSign\Admin
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class AssetGroupAccountClone implements ModelInterface, ArrayAccess
@@ -72,7 +72,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
         'created_by_name' => '?string',
         'created_by_email' => '?string',
         'message' => '?string',
-        'clone_processing_failure_details' => '\DocuSign\Admin\Model\CloneErrorDetails'
+        'clone_processing_failure_details' => '\DocuSign\Admin\Model\SubAccountErrorDetails'
     ];
 
     /**
@@ -230,9 +230,11 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
     const ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_FULFILLMENT = 'AccountAssetFulfillment';
     const ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_CLONE = 'AccountAssetClone';
     const ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_CREATE = 'AccountAssetCreate';
+    const ASSET_GROUP_WORK_TYPE_SUBSCRIPTION_SYNC = 'SubscriptionSync';
     const STATUS_UNDEFINED = 'Undefined';
     const STATUS_PENDING = 'Pending';
     const STATUS_PROCESSING = 'Processing';
+    const STATUS_PROCESSING_ON_HOLD = 'ProcessingOnHold';
     const STATUS_PENDING_ERROR = 'PendingError';
     const STATUS_PROCESSING_ERROR = 'ProcessingError';
     const STATUS_COMPLETED = 'Completed';
@@ -254,6 +256,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
             self::ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_FULFILLMENT,
             self::ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_CLONE,
             self::ASSET_GROUP_WORK_TYPE_ACCOUNT_ASSET_CREATE,
+            self::ASSET_GROUP_WORK_TYPE_SUBSCRIPTION_SYNC,
         ];
     }
     
@@ -268,6 +271,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
             self::STATUS_UNDEFINED,
             self::STATUS_PENDING,
             self::STATUS_PROCESSING,
+            self::STATUS_PROCESSING_ON_HOLD,
             self::STATUS_PENDING_ERROR,
             self::STATUS_PROCESSING_ERROR,
             self::STATUS_COMPLETED,
@@ -687,7 +691,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
     /**
      * Gets clone_processing_failure_details
      *
-     * @return \DocuSign\Admin\Model\CloneErrorDetails
+     * @return \DocuSign\Admin\Model\SubAccountErrorDetails
      */
     public function getCloneProcessingFailureDetails()
     {
@@ -697,7 +701,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
     /**
      * Sets clone_processing_failure_details
      *
-     * @param \DocuSign\Admin\Model\CloneErrorDetails $clone_processing_failure_details The processing failures if the work is in PendingError/ProcessingError status.
+     * @param \DocuSign\Admin\Model\SubAccountErrorDetails $clone_processing_failure_details The processing failures if the work is in PendingError/ProcessingError status.
      *
      * @return $this
      */

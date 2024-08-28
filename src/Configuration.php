@@ -6,12 +6,12 @@
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -36,7 +36,7 @@ namespace DocuSign\Admin;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class Configuration
@@ -111,7 +111,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/v2.1/1.4.2/php/' . PHP_VERSION;
+    protected $userAgent = 'Swagger-Codegen/v2.1/2.0.0-rc1/php/' . PHP_VERSION;
 
     /**
      * Debug switch (default set to false)
@@ -774,7 +774,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: v2.1' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.4.2' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.0.0-rc1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

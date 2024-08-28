@@ -9,12 +9,12 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -39,7 +39,7 @@ namespace DocuSign\Admin\Api\ProvisionAssetGroupApi;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetAssetGroupAccountCloneOptions
@@ -80,7 +80,7 @@ class GetAssetGroupAccountCloneOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetAssetGroupAccountClonesByOrgIdOptions
@@ -148,7 +148,7 @@ class GetAssetGroupAccountClonesByOrgIdOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetAssetGroupAccountsOptions
@@ -183,6 +183,115 @@ class GetAssetGroupAccountsOptions
 }
 
 
+/**
+ * GetSubAccountCreateProcessByAssetGroupWorkIdOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class GetSubAccountCreateProcessByAssetGroupWorkIdOptions
+{
+    /**
+      * $include_details When true, include details for the asset group account create.
+      * @var ?bool
+      */
+    protected ?bool $include_details = null;
+
+    /**
+     * Gets include_details
+     *
+     * @return ?bool
+     */
+    public function getIncludeDetails(): ?bool
+    {
+        return $this->include_details;
+    }
+
+    /**
+     * Sets include_details
+     * @param ?bool $include_details When true, include details for the asset group account create.
+     *
+     * @return self
+     */
+    public function setIncludeDetails(?bool $include_details): self
+    {
+        $this->include_details = $include_details;
+        return $this;
+    }
+}
+
+
+/**
+ * GetSubAccountCreateProcessesByOrgIdOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class GetSubAccountCreateProcessesByOrgIdOptions
+{
+    /**
+      * $since_updated_date When provided and is in the past, only return asset group account create processes that are updated after the date.
+      * @var \DateTime
+      */
+    protected \DateTime $since_updated_date = null;
+
+    /**
+     * Gets since_updated_date
+     *
+     * @return \DateTime
+     */
+    public function getSinceUpdatedDate(): \DateTime
+    {
+        return $this->since_updated_date;
+    }
+
+    /**
+     * Sets since_updated_date
+     * @param \DateTime $since_updated_date When provided and is in the past, only return asset group account create processes that are updated after the date.
+     *
+     * @return self
+     */
+    public function setSinceUpdatedDate(\DateTime $since_updated_date): self
+    {
+        $this->since_updated_date = $since_updated_date;
+        return $this;
+    }
+    /**
+      * $include_details When true, include details for the asset group account create processes.
+      * @var ?bool
+      */
+    protected ?bool $include_details = null;
+
+    /**
+     * Gets include_details
+     *
+     * @return ?bool
+     */
+    public function getIncludeDetails(): ?bool
+    {
+        return $this->include_details;
+    }
+
+    /**
+     * Sets include_details
+     * @param ?bool $include_details When true, include details for the asset group account create processes.
+     *
+     * @return self
+     */
+    public function setIncludeDetails(?bool $include_details): self
+    {
+        $this->include_details = $include_details;
+        return $this;
+    }
+}
+
+
 
 namespace DocuSign\Admin\Api;
 
@@ -197,7 +306,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ProvisionAssetGroupApi
@@ -266,7 +375,7 @@ class ProvisionAssetGroupApi
     /**
      * Operation cloneAssetGroupAccount
      *
-     * Clones an existing DocuSign account to a new DocuSign account.
+     * Clones an existing Docusign account to a new Docusign account.
      *
      * @param ?string $organization_id The Guid representing the organization id.
      * @param \DocuSign\Admin\Model\AssetGroupAccountClone $request The request defails for the new asset group account clone. (required)
@@ -283,7 +392,7 @@ class ProvisionAssetGroupApi
     /**
      * Operation cloneAssetGroupAccountWithHttpInfo
      *
-     * Clones an existing DocuSign account to a new DocuSign account.
+     * Clones an existing Docusign account to a new Docusign account.
      *
      * @param ?string $organization_id The Guid representing the organization id.
      * @param \DocuSign\Admin\Model\AssetGroupAccountClone $request The request defails for the new asset group account clone. (required)
@@ -302,7 +411,7 @@ class ProvisionAssetGroupApi
             throw new \InvalidArgumentException('Missing the required parameter $request when calling cloneAssetGroupAccount');
         }
         // parse inputs
-        $resourcePath = "/v1/organizations/{organizationId}/assetGroups/accountClone";
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroups/accountClone";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -341,7 +450,7 @@ class ProvisionAssetGroupApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\Admin\Model\AssetGroupAccountClone',
-                '/v1/organizations/{organizationId}/assetGroups/accountClone'
+                '/v2/organizations/{organizationId}/assetGroups/accountClone'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\AssetGroupAccountClone', $httpHeader), $statusCode, $httpHeader];
@@ -349,6 +458,100 @@ class ProvisionAssetGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\AssetGroupAccountClone', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createAssetGroupAccount
+     *
+     * Creates a new Docusign account using the plan and modules specified in request body.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param \DocuSign\Admin\Model\SubAccountCreateRequest $request The request details for the new account. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\SubscriptionProvisionModelAssetGroupWorkResult
+     */
+    public function createAssetGroupAccount($organization_id, $request)
+    {
+        list($response) = $this->createAssetGroupAccountWithHttpInfo($organization_id, $request);
+        return $response;
+    }
+
+    /**
+     * Operation createAssetGroupAccountWithHttpInfo
+     *
+     * Creates a new Docusign account using the plan and modules specified in request body.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param \DocuSign\Admin\Model\SubAccountCreateRequest $request The request details for the new account. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\SubscriptionProvisionModelAssetGroupWorkResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createAssetGroupAccountWithHttpInfo($organization_id, $request): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling createAssetGroupAccount');
+        }
+        // verify the required parameter 'request' is set
+        if ($request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling createAssetGroupAccount');
+        }
+        // parse inputs
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroups/accountCreate";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // body params
+        $_tempBody = null;
+        if (isset($request)) {
+            $_tempBody = $request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\SubscriptionProvisionModelAssetGroupWorkResult',
+                '/v2/organizations/{organizationId}/assetGroups/accountCreate'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\SubscriptionProvisionModelAssetGroupWorkResult', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\SubscriptionProvisionModelAssetGroupWorkResult', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -404,7 +607,7 @@ class ProvisionAssetGroupApi
             throw new \InvalidArgumentException('Missing the required parameter $asset_group_work_id when calling getAssetGroupAccountClone');
         }
         // parse inputs
-        $resourcePath = "/v1/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -453,7 +656,7 @@ class ProvisionAssetGroupApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\Admin\Model\AssetGroupAccountClone',
-                '/v1/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}'
+                '/v2/organizations/{organizationId}/assetGroups/{assetGroupId}/accountClones/{assetGroupWorkId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\AssetGroupAccountClone', $httpHeader), $statusCode, $httpHeader];
@@ -504,7 +707,7 @@ class ProvisionAssetGroupApi
             throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAssetGroupAccountClonesByOrgId');
         }
         // parse inputs
-        $resourcePath = "/v1/organizations/{organizationId}/assetGroups/accountClones";
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroups/accountClones";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -548,7 +751,7 @@ class ProvisionAssetGroupApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\Admin\Model\AssetGroupAccountClones',
-                '/v1/organizations/{organizationId}/assetGroups/accountClones'
+                '/v2/organizations/{organizationId}/assetGroups/accountClones'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\AssetGroupAccountClones', $httpHeader), $statusCode, $httpHeader];
@@ -599,7 +802,7 @@ class ProvisionAssetGroupApi
             throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getAssetGroupAccounts');
         }
         // parse inputs
-        $resourcePath = "/v1/organizations/{organizationId}/assetGroups/accounts";
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroups/accounts";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -640,7 +843,7 @@ class ProvisionAssetGroupApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\Admin\Model\AssetGroupAccountsResponse',
-                '/v1/organizations/{organizationId}/assetGroups/accounts'
+                '/v2/organizations/{organizationId}/assetGroups/accounts'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\AssetGroupAccountsResponse', $httpHeader), $statusCode, $httpHeader];
@@ -648,6 +851,296 @@ class ProvisionAssetGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\AssetGroupAccountsResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOrganizationPlanItems
+     *
+     * Gets the subscription details for an organization id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\OrganizationSubscriptionResponse[]
+     */
+    public function getOrganizationPlanItems($organization_id)
+    {
+        list($response) = $this->getOrganizationPlanItemsWithHttpInfo($organization_id);
+        return $response;
+    }
+
+    /**
+     * Operation getOrganizationPlanItemsWithHttpInfo
+     *
+     * Gets the subscription details for an organization id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\OrganizationSubscriptionResponse[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOrganizationPlanItemsWithHttpInfo($organization_id): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getOrganizationPlanItems');
+        }
+        // parse inputs
+        $resourcePath = "/v2/organizations/{organizationId}/planItems";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\OrganizationSubscriptionResponse[]',
+                '/v2/organizations/{organizationId}/planItems'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\OrganizationSubscriptionResponse[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\OrganizationSubscriptionResponse[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSubAccountCreateProcessByAssetGroupWorkId
+     *
+     * Gets an asset group account create process info by the asset group work id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param ?string $asset_group_id The Guid representing the asset group id.
+     * @param ?string $asset_group_work_id The Guid representing the asset group account create id
+     * @param  \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\SubAccountCreateWorker
+     */
+    public function getSubAccountCreateProcessByAssetGroupWorkId($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null)
+    {
+        list($response) = $this->getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, $options);
+        return $response;
+    }
+
+    /**
+     * Operation getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo
+     *
+     * Gets an asset group account create process info by the asset group work id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param ?string $asset_group_id The Guid representing the asset group id.
+     * @param ?string $asset_group_work_id The Guid representing the asset group account create id
+     * @param  \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\SubAccountCreateWorker, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getSubAccountCreateProcessByAssetGroupWorkId');
+        }
+        // verify the required parameter 'asset_group_id' is set
+        if ($asset_group_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $asset_group_id when calling getSubAccountCreateProcessByAssetGroupWorkId');
+        }
+        // verify the required parameter 'asset_group_work_id' is set
+        if ($asset_group_work_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $asset_group_work_id when calling getSubAccountCreateProcessByAssetGroupWorkId');
+        }
+        // parse inputs
+        $resourcePath = "/v2/organizations/{organizationId}/assetGroup/{assetGroupId}/subAccountCreated/{assetGroupWorkId}";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        if ($options != null)
+        {
+            // query params
+            if ($options->getIncludeDetails() != 'null') {
+                $queryParams['include_details'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeDetails());
+            }
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+        // path params
+        if ($asset_group_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "assetGroupId", $asset_group_id);
+        }
+        // path params
+        if ($asset_group_work_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "assetGroupWorkId", $asset_group_work_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\SubAccountCreateWorker',
+                '/v2/organizations/{organizationId}/assetGroup/{assetGroupId}/subAccountCreated/{assetGroupWorkId}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\SubAccountCreateWorker', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\SubAccountCreateWorker', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSubAccountCreateProcessesByOrgId
+     *
+     * Gets all asset group account creation processes for an organization id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param  \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Admin\Model\SubAccountCreateWorkerResponse
+     */
+    public function getSubAccountCreateProcessesByOrgId($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null)
+    {
+        list($response) = $this->getSubAccountCreateProcessesByOrgIdWithHttpInfo($organization_id, $options);
+        return $response;
+    }
+
+    /**
+     * Operation getSubAccountCreateProcessesByOrgIdWithHttpInfo
+     *
+     * Gets all asset group account creation processes for an organization id.
+     *
+     * @param ?string $organization_id The Guid representing the organization id.
+     * @param  \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions  $options for modifying the behavior of the function. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Admin\Model\SubAccountCreateWorkerResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSubAccountCreateProcessesByOrgIdWithHttpInfo($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null): array
+    {
+        // verify the required parameter 'organization_id' is set
+        if ($organization_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $organization_id when calling getSubAccountCreateProcessesByOrgId');
+        }
+        // parse inputs
+        $resourcePath = "/v2/organizations/{organizationId}/subAccountsCreated";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        if ($options != null)
+        {
+            // query params
+            if ($options->getSinceUpdatedDate() != 'null') {
+                $queryParams['since_updated_date'] = $this->apiClient->getSerializer()->toQueryValue($options->getSinceUpdatedDate());
+            }
+            if ($options->getIncludeDetails() != 'null') {
+                $queryParams['include_details'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeDetails());
+            }
+        }
+
+        // path params
+        if ($organization_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "organizationId", $organization_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Admin\Model\SubAccountCreateWorkerResponse',
+                '/v2/organizations/{organizationId}/subAccountsCreated'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Admin\Model\SubAccountCreateWorkerResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Admin\Model\SubAccountCreateWorkerResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
