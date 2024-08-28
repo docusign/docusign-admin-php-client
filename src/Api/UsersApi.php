@@ -9,12 +9,12 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * DocuSign Admin API
+ * Docusign Admin API
  *
  * An API for an organization administrator to manage organizations, accounts and users
  *
@@ -39,7 +39,7 @@ namespace DocuSign\Admin\Api\UsersApi;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUserDSProfileOptions
@@ -80,7 +80,7 @@ class GetUserDSProfileOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUserDSProfilesByEmailOptions
@@ -148,7 +148,7 @@ class GetUserDSProfilesByEmailOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUserProfilesOptions
@@ -189,7 +189,7 @@ class GetUserProfilesOptions
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetUsersOptions
@@ -464,6 +464,33 @@ class GetUsersOptions
         $this->last_modified_since = $last_modified_since;
         return $this;
     }
+    /**
+      * $include_ds_groups Select users with groups the users belong to; The organization must have entitlement AllowMultiApplication enabled.
+      * @var ?bool
+      */
+    protected ?bool $include_ds_groups = null;
+
+    /**
+     * Gets include_ds_groups
+     *
+     * @return ?bool
+     */
+    public function getIncludeDsGroups(): ?bool
+    {
+        return $this->include_ds_groups;
+    }
+
+    /**
+     * Sets include_ds_groups
+     * @param ?bool $include_ds_groups Select users with groups the users belong to; The organization must have entitlement AllowMultiApplication enabled.
+     *
+     * @return self
+     */
+    public function setIncludeDsGroups(?bool $include_ds_groups): self
+    {
+        $this->include_ds_groups = $include_ds_groups;
+        return $this;
+    }
 }
 
 
@@ -481,7 +508,7 @@ use DocuSign\Admin\ObjectSerializer;
  * @category Class
  * @package  DocuSign\Admin
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class UsersApi
@@ -1533,6 +1560,9 @@ class UsersApi
             }
             if ($options->getLastModifiedSince() != 'null') {
                 $queryParams['last_modified_since'] = $this->apiClient->getSerializer()->toQueryValue($options->getLastModifiedSince());
+            }
+            if ($options->getIncludeDsGroups() != 'null') {
+                $queryParams['include_ds_groups'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeDsGroups());
             }
         }
 

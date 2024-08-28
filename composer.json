@@ -1,8 +1,8 @@
 {
     "name": "docusign/admin-client",
-    "description": "The DocuSign Admin API enables you to automate user management with your existing systems while ensuring governance and compliance.",
+    "description": "The Docusign Admin API enables you to automate user management with your existing systems while ensuring governance and compliance.",
     "keywords": [
-        "DocuSign",
+        "Docusign",
         "Admin",
         "php",
         "sdk",

@@ -1,6 +1,30 @@
 # DocuSign Admin Java Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v2.0.0-rc1] - Admin API v2.1-1.4.0 - 2024-08-27
+### Breaking Changes
+<details>
+<summary>API Changes (Click to expand)</summary>
+
+<br/>
+<div style="margin-left: 20px;">
+
+Added new query parameter "include_ds_groups" to the API "/v2/organizations/{organizationId}/users":
+
+<h3>Added New APIs for Account Creation</h3>
+<li>GET: get subscription details for organization</li>
+<li>POST: initiate Create account request</li>
+<li>GET: get ongoing process details by org ID</li>
+<li>GET: get individual process details by org ID, asset group ID, asset group work ID</li>
+
+
+</div>
+</details>
+ 
+### Other Changes
+- Added support for version v2.1-1.4.0 of the DocuSign Admin API.
+- Updated the SDK release version.
+
 ## [v1.4.2] - Admin API v2.1-1.3.0 - 2024-04-22
 ### Changed
 - Adjusted the minimum required firebase/php-jwt package version to 6.0.
