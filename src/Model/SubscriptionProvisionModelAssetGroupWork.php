@@ -83,10 +83,10 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
         'source_system' => '?string',
         'source_id' => '?string',
         'created_by' => '?string',
-        'created_by_type' => '?string',
+        'created_by_type' => '?int',
         'created_date' => '\DateTime',
         'updated_by' => '?string',
-        'updated_by_type' => '?string',
+        'updated_by_type' => '?int',
         'updated_date' => '\DateTime',
         'update_history' => '\DocuSign\Admin\Model\SubscriptionProvisionModelChangeEvent[]'
     ];
@@ -121,10 +121,10 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
         'source_system' => null,
         'source_id' => null,
         'created_by' => null,
-        'created_by_type' => null,
+        'created_by_type' => 'int32',
         'created_date' => 'date-time',
         'updated_by' => null,
-        'updated_by_type' => null,
+        'updated_by_type' => 'int32',
         'updated_date' => 'date-time',
         'update_history' => null
     ];
@@ -320,18 +320,18 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     const STATUS_COMPLETED = 'Completed';
     const STATUS_CANCELED = 'Canceled';
     const STATUS_PERMANENT_FAILURE = 'PermanentFailure';
-    const CREATED_BY_TYPE_APPLICATION = 'Application';
-    const CREATED_BY_TYPE_USER = 'User';
-    const CREATED_BY_TYPE_GENERIC = 'Generic';
-    const CREATED_BY_TYPE_REST_API_AUTH = 'RestAPIAuth';
-    const CREATED_BY_TYPE_RESOURCE = 'Resource';
-    const CREATED_BY_TYPE_RESTRICTED = 'Restricted';
-    const UPDATED_BY_TYPE_APPLICATION = 'Application';
-    const UPDATED_BY_TYPE_USER = 'User';
-    const UPDATED_BY_TYPE_GENERIC = 'Generic';
-    const UPDATED_BY_TYPE_REST_API_AUTH = 'RestAPIAuth';
-    const UPDATED_BY_TYPE_RESOURCE = 'Resource';
-    const UPDATED_BY_TYPE_RESTRICTED = 'Restricted';
+    const CREATED_BY_TYPE__0 = '0';
+    const CREATED_BY_TYPE__1 = '1';
+    const CREATED_BY_TYPE__2 = '2';
+    const CREATED_BY_TYPE__3 = '3';
+    const CREATED_BY_TYPE__4 = '4';
+    const CREATED_BY_TYPE__5 = '5';
+    const UPDATED_BY_TYPE__0 = '0';
+    const UPDATED_BY_TYPE__1 = '1';
+    const UPDATED_BY_TYPE__2 = '2';
+    const UPDATED_BY_TYPE__3 = '3';
+    const UPDATED_BY_TYPE__4 = '4';
+    const UPDATED_BY_TYPE__5 = '5';
     
 
     
@@ -380,12 +380,12 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     public function getCreatedByTypeAllowableValues()
     {
         return [
-            self::CREATED_BY_TYPE_APPLICATION,
-            self::CREATED_BY_TYPE_USER,
-            self::CREATED_BY_TYPE_GENERIC,
-            self::CREATED_BY_TYPE_REST_API_AUTH,
-            self::CREATED_BY_TYPE_RESOURCE,
-            self::CREATED_BY_TYPE_RESTRICTED,
+            self::CREATED_BY_TYPE__0,
+            self::CREATED_BY_TYPE__1,
+            self::CREATED_BY_TYPE__2,
+            self::CREATED_BY_TYPE__3,
+            self::CREATED_BY_TYPE__4,
+            self::CREATED_BY_TYPE__5,
         ];
     }
     
@@ -397,12 +397,12 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     public function getUpdatedByTypeAllowableValues()
     {
         return [
-            self::UPDATED_BY_TYPE_APPLICATION,
-            self::UPDATED_BY_TYPE_USER,
-            self::UPDATED_BY_TYPE_GENERIC,
-            self::UPDATED_BY_TYPE_REST_API_AUTH,
-            self::UPDATED_BY_TYPE_RESOURCE,
-            self::UPDATED_BY_TYPE_RESTRICTED,
+            self::UPDATED_BY_TYPE__0,
+            self::UPDATED_BY_TYPE__1,
+            self::UPDATED_BY_TYPE__2,
+            self::UPDATED_BY_TYPE__3,
+            self::UPDATED_BY_TYPE__4,
+            self::UPDATED_BY_TYPE__5,
         ];
     }
     
@@ -480,7 +480,7 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
         }
 
         $allowedValues = $this->getCreatedByTypeAllowableValues();
-        if (!is_null($this->container['created_by_type']) && !in_array($this->container['created_by_type'], $allowedValues, true)) {
+        if (!is_null($this->container['created_by_type']) && !in_array($this->container['created_by_type'], $allowedValues, false)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'created_by_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -488,7 +488,7 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
         }
 
         $allowedValues = $this->getUpdatedByTypeAllowableValues();
-        if (!is_null($this->container['updated_by_type']) && !in_array($this->container['updated_by_type'], $allowedValues, true)) {
+        if (!is_null($this->container['updated_by_type']) && !in_array($this->container['updated_by_type'], $allowedValues, false)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'updated_by_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -1107,7 +1107,7 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     /**
      * Gets created_by_type
      *
-     * @return ?string
+     * @return ?int
      */
     public function getCreatedByType()
     {
@@ -1117,14 +1117,14 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     /**
      * Sets created_by_type
      *
-     * @param ?string $created_by_type created_by_type
+     * @param ?int $created_by_type 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
      *
      * @return $this
      */
     public function setCreatedByType($created_by_type)
     {
         $allowedValues = $this->getCreatedByTypeAllowableValues();
-        if (!is_null($created_by_type) && !in_array($created_by_type, $allowedValues, true)) {
+        if (!is_null($created_by_type) && !in_array($created_by_type, $allowedValues, false)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'created_by_type', must be one of '%s'",
@@ -1188,7 +1188,7 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     /**
      * Gets updated_by_type
      *
-     * @return ?string
+     * @return ?int
      */
     public function getUpdatedByType()
     {
@@ -1198,14 +1198,14 @@ class SubscriptionProvisionModelAssetGroupWork implements ModelInterface, ArrayA
     /**
      * Sets updated_by_type
      *
-     * @param ?string $updated_by_type updated_by_type
+     * @param ?int $updated_by_type 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
      *
      * @return $this
      */
     public function setUpdatedByType($updated_by_type)
     {
         $allowedValues = $this->getUpdatedByTypeAllowableValues();
-        if (!is_null($updated_by_type) && !in_array($updated_by_type, $allowedValues, true)) {
+        if (!is_null($updated_by_type) && !in_array($updated_by_type, $allowedValues, false)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'updated_by_type', must be one of '%s'",
