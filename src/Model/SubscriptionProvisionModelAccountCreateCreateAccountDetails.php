@@ -65,7 +65,7 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
         'site' => '?string',
         'address' => '\DocuSign\Admin\Model\DocuSignAccountDomainModelAddress',
         'admin_user' => '\DocuSign\Admin\Model\SubscriptionProvisionModelAccountCreateAccountAdmin',
-        'billing_profile_type' => '?string'
+        'billing_profile_type' => '?int'
     ];
 
     /**
@@ -80,7 +80,7 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
         'site' => null,
         'address' => null,
         'admin_user' => null,
-        'billing_profile_type' => null
+        'billing_profile_type' => 'int32'
     ];
 
     /**
@@ -190,8 +190,8 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
         return self::$swaggerModelName;
     }
 
-    const BILLING_PROFILE_TYPE_WEB = 'Web';
-    const BILLING_PROFILE_TYPE_DIRECT = 'Direct';
+    const BILLING_PROFILE_TYPE__0 = '0';
+    const BILLING_PROFILE_TYPE__1 = '1';
     
 
     
@@ -203,8 +203,8 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
     public function getBillingProfileTypeAllowableValues()
     {
         return [
-            self::BILLING_PROFILE_TYPE_WEB,
-            self::BILLING_PROFILE_TYPE_DIRECT,
+            self::BILLING_PROFILE_TYPE__0,
+            self::BILLING_PROFILE_TYPE__1,
         ];
     }
     
@@ -243,7 +243,7 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
         $invalidProperties = [];
 
         $allowedValues = $this->getBillingProfileTypeAllowableValues();
-        if (!is_null($this->container['billing_profile_type']) && !in_array($this->container['billing_profile_type'], $allowedValues, true)) {
+        if (!is_null($this->container['billing_profile_type']) && !in_array($this->container['billing_profile_type'], $allowedValues, false)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'billing_profile_type', must be one of '%s'",
                 implode("', '", $allowedValues)
@@ -412,7 +412,7 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
     /**
      * Gets billing_profile_type
      *
-     * @return ?string
+     * @return ?int
      */
     public function getBillingProfileType()
     {
@@ -422,14 +422,14 @@ class SubscriptionProvisionModelAccountCreateCreateAccountDetails implements Mod
     /**
      * Sets billing_profile_type
      *
-     * @param ?string $billing_profile_type billing_profile_type
+     * @param ?int $billing_profile_type 0 stands for Web, 1 stands for Direct
      *
      * @return $this
      */
     public function setBillingProfileType($billing_profile_type)
     {
         $allowedValues = $this->getBillingProfileTypeAllowableValues();
-        if (!is_null($billing_profile_type) && !in_array($billing_profile_type, $allowedValues, true)) {
+        if (!is_null($billing_profile_type) && !in_array($billing_profile_type, $allowedValues, false)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'billing_profile_type', must be one of '%s'",

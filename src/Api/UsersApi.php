@@ -465,7 +465,7 @@ class GetUsersOptions
         return $this;
     }
     /**
-      * $include_ds_groups Select users with groups the users belong to; The organization must have entitlement AllowMultiApplication enabled.
+      * $include_ds_groups Select users with groups the users belong to; account_id must be specified. The organization must have the entitlement AllowMultiApplication enabled.
       * @var ?bool
       */
     protected ?bool $include_ds_groups = null;
@@ -482,7 +482,7 @@ class GetUsersOptions
 
     /**
      * Sets include_ds_groups
-     * @param ?bool $include_ds_groups Select users with groups the users belong to; The organization must have entitlement AllowMultiApplication enabled.
+     * @param ?bool $include_ds_groups Select users with groups the users belong to; account_id must be specified. The organization must have the entitlement AllowMultiApplication enabled.
      *
      * @return self
      */
