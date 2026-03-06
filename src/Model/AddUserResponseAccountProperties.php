@@ -64,7 +64,11 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         'product_permission_profiles' => '\DocuSign\Admin\Model\ProductPermissionProfileResponse[]',
         'ds_groups' => '\DocuSign\Admin\Model\DSGroupResponse[]',
         'company_name' => '?string',
-        'job_title' => '?string'
+        'job_title' => '?string',
+        'license_type' => '?string',
+        'subscription_id' => '?string',
+        'plan_name' => '?string',
+        'license_status' => '?string'
     ];
 
     /**
@@ -78,7 +82,11 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         'product_permission_profiles' => null,
         'ds_groups' => null,
         'company_name' => null,
-        'job_title' => null
+        'job_title' => null,
+        'license_type' => null,
+        'subscription_id' => null,
+        'plan_name' => null,
+        'license_status' => null
     ];
 
     /**
@@ -113,7 +121,11 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         'product_permission_profiles' => 'product_permission_profiles',
         'ds_groups' => 'ds_groups',
         'company_name' => 'company_name',
-        'job_title' => 'job_title'
+        'job_title' => 'job_title',
+        'license_type' => 'license_type',
+        'subscription_id' => 'subscription_id',
+        'plan_name' => 'plan_name',
+        'license_status' => 'license_status'
     ];
 
     /**
@@ -127,7 +139,11 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         'product_permission_profiles' => 'setProductPermissionProfiles',
         'ds_groups' => 'setDsGroups',
         'company_name' => 'setCompanyName',
-        'job_title' => 'setJobTitle'
+        'job_title' => 'setJobTitle',
+        'license_type' => 'setLicenseType',
+        'subscription_id' => 'setSubscriptionId',
+        'plan_name' => 'setPlanName',
+        'license_status' => 'setLicenseStatus'
     ];
 
     /**
@@ -141,7 +157,11 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         'product_permission_profiles' => 'getProductPermissionProfiles',
         'ds_groups' => 'getDsGroups',
         'company_name' => 'getCompanyName',
-        'job_title' => 'getJobTitle'
+        'job_title' => 'getJobTitle',
+        'license_type' => 'getLicenseType',
+        'subscription_id' => 'getSubscriptionId',
+        'plan_name' => 'getPlanName',
+        'license_status' => 'getLicenseStatus'
     ];
 
     /**
@@ -202,7 +222,7 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['site_id'] = isset($data['site_id']) ? $data['site_id'] : null;
@@ -210,6 +230,10 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
         $this->container['ds_groups'] = isset($data['ds_groups']) ? $data['ds_groups'] : null;
         $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
         $this->container['job_title'] = isset($data['job_title']) ? $data['job_title'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['plan_name'] = isset($data['plan_name']) ? $data['plan_name'] : null;
+        $this->container['license_status'] = isset($data['license_status']) ? $data['license_status'] : null;
     }
 
     /**
@@ -376,6 +400,102 @@ class AddUserResponseAccountProperties implements ModelInterface, ArrayAccess
     public function setJobTitle($job_title)
     {
         $this->container['job_title'] = $job_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     *
+     * @return ?string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     *
+     * @param ?string $subscription_id subscription_id
+     *
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_name
+     *
+     * @return ?string
+     */
+    public function getPlanName()
+    {
+        return $this->container['plan_name'];
+    }
+
+    /**
+     * Sets plan_name
+     *
+     * @param ?string $plan_name plan_name
+     *
+     * @return $this
+     */
+    public function setPlanName($plan_name)
+    {
+        $this->container['plan_name'] = $plan_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_status
+     *
+     * @return ?string
+     */
+    public function getLicenseStatus()
+    {
+        return $this->container['license_status'];
+    }
+
+    /**
+     * Sets license_status
+     *
+     * @param ?string $license_status license_status
+     *
+     * @return $this
+     */
+    public function setLicenseStatus($license_status)
+    {
+        $this->container['license_status'] = $license_status;
 
         return $this;
     }

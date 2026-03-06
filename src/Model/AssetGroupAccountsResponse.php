@@ -177,7 +177,7 @@ class AssetGroupAccountsResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['asset_group_accounts'] = isset($data['asset_group_accounts']) ? $data['asset_group_accounts'] : null;
     }

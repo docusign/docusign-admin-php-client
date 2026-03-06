@@ -59,6 +59,7 @@ class MembershipResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => '?string',
         'email' => '?string',
         'account_id' => '?string',
         'external_account_id' => '?string',
@@ -68,7 +69,10 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         'permission_profile' => '\DocuSign\Admin\Model\PermissionProfileResponse',
         'created_on' => '\DateTime',
         'groups' => '\DocuSign\Admin\Model\MemberGroupResponse[]',
-        'is_admin' => '?bool'
+        'is_admin' => '?bool',
+        'license_type' => '?string',
+        'subscription_id' => '?string',
+        'plan_name' => '?string'
     ];
 
     /**
@@ -77,6 +81,7 @@ class MembershipResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'id' => 'uuid',
         'email' => null,
         'account_id' => 'uuid',
         'external_account_id' => null,
@@ -86,7 +91,10 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         'permission_profile' => null,
         'created_on' => 'date-time',
         'groups' => null,
-        'is_admin' => null
+        'is_admin' => null,
+        'license_type' => null,
+        'subscription_id' => null,
+        'plan_name' => null
     ];
 
     /**
@@ -116,6 +124,7 @@ class MembershipResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'email' => 'email',
         'account_id' => 'account_id',
         'external_account_id' => 'external_account_id',
@@ -125,7 +134,10 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         'permission_profile' => 'permission_profile',
         'created_on' => 'created_on',
         'groups' => 'groups',
-        'is_admin' => 'is_admin'
+        'is_admin' => 'is_admin',
+        'license_type' => 'license_type',
+        'subscription_id' => 'subscription_id',
+        'plan_name' => 'plan_name'
     ];
 
     /**
@@ -134,6 +146,7 @@ class MembershipResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'email' => 'setEmail',
         'account_id' => 'setAccountId',
         'external_account_id' => 'setExternalAccountId',
@@ -143,7 +156,10 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         'permission_profile' => 'setPermissionProfile',
         'created_on' => 'setCreatedOn',
         'groups' => 'setGroups',
-        'is_admin' => 'setIsAdmin'
+        'is_admin' => 'setIsAdmin',
+        'license_type' => 'setLicenseType',
+        'subscription_id' => 'setSubscriptionId',
+        'plan_name' => 'setPlanName'
     ];
 
     /**
@@ -152,6 +168,7 @@ class MembershipResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'email' => 'getEmail',
         'account_id' => 'getAccountId',
         'external_account_id' => 'getExternalAccountId',
@@ -161,7 +178,10 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         'permission_profile' => 'getPermissionProfile',
         'created_on' => 'getCreatedOn',
         'groups' => 'getGroups',
-        'is_admin' => 'getIsAdmin'
+        'is_admin' => 'getIsAdmin',
+        'license_type' => 'getLicenseType',
+        'subscription_id' => 'getSubscriptionId',
+        'plan_name' => 'getPlanName'
     ];
 
     /**
@@ -222,8 +242,9 @@ class MembershipResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['external_account_id'] = isset($data['external_account_id']) ? $data['external_account_id'] : null;
@@ -234,6 +255,9 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         $this->container['created_on'] = isset($data['created_on']) ? $data['created_on'] : null;
         $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
         $this->container['is_admin'] = isset($data['is_admin']) ? $data['is_admin'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['plan_name'] = isset($data['plan_name']) ? $data['plan_name'] : null;
     }
 
     /**
@@ -259,6 +283,30 @@ class MembershipResponse implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return ?string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param ?string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets email
@@ -496,6 +544,78 @@ class MembershipResponse implements ModelInterface, ArrayAccess
     public function setIsAdmin($is_admin)
     {
         $this->container['is_admin'] = $is_admin;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     *
+     * @return ?string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     *
+     * @param ?string $subscription_id subscription_id
+     *
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_name
+     *
+     * @return ?string
+     */
+    public function getPlanName()
+    {
+        return $this->container['plan_name'];
+    }
+
+    /**
+     * Sets plan_name
+     *
+     * @param ?string $plan_name plan_name
+     *
+     * @return $this
+     */
+    public function setPlanName($plan_name)
+    {
+        $this->container['plan_name'] = $plan_name;
 
         return $this;
     }

@@ -69,7 +69,8 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         'language_culture' => '?string',
         'access_code' => '?string',
         'federated_status' => '?string',
-        'auto_activate_memberships' => '?bool'
+        'auto_activate_memberships' => '?bool',
+        'license_type' => '?string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         'language_culture' => null,
         'access_code' => null,
         'federated_status' => null,
-        'auto_activate_memberships' => null
+        'auto_activate_memberships' => null,
+        'license_type' => null
     ];
 
     /**
@@ -128,7 +130,8 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         'language_culture' => 'language_culture',
         'access_code' => 'access_code',
         'federated_status' => 'federated_status',
-        'auto_activate_memberships' => 'auto_activate_memberships'
+        'auto_activate_memberships' => 'auto_activate_memberships',
+        'license_type' => 'license_type'
     ];
 
     /**
@@ -147,7 +150,8 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         'language_culture' => 'setLanguageCulture',
         'access_code' => 'setAccessCode',
         'federated_status' => 'setFederatedStatus',
-        'auto_activate_memberships' => 'setAutoActivateMemberships'
+        'auto_activate_memberships' => 'setAutoActivateMemberships',
+        'license_type' => 'setLicenseType'
     ];
 
     /**
@@ -166,7 +170,8 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         'language_culture' => 'getLanguageCulture',
         'access_code' => 'getAccessCode',
         'federated_status' => 'getFederatedStatus',
-        'auto_activate_memberships' => 'getAutoActivateMemberships'
+        'auto_activate_memberships' => 'getAutoActivateMemberships',
+        'license_type' => 'getLicenseType'
     ];
 
     /**
@@ -227,7 +232,7 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['product_permission_profiles'] = isset($data['product_permission_profiles']) ? $data['product_permission_profiles'] : null;
         $this->container['ds_groups'] = isset($data['ds_groups']) ? $data['ds_groups'] : null;
@@ -240,6 +245,7 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
         $this->container['access_code'] = isset($data['access_code']) ? $data['access_code'] : null;
         $this->container['federated_status'] = isset($data['federated_status']) ? $data['federated_status'] : null;
         $this->container['auto_activate_memberships'] = isset($data['auto_activate_memberships']) ? $data['auto_activate_memberships'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
     }
 
     /**
@@ -532,6 +538,30 @@ class NewMultiProductUserAddRequest implements ModelInterface, ArrayAccess
     public function setAutoActivateMemberships($auto_activate_memberships)
     {
         $this->container['auto_activate_memberships'] = $auto_activate_memberships;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
 
         return $this;
     }

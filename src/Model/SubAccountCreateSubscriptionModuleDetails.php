@@ -182,7 +182,7 @@ class SubAccountCreateSubscriptionModuleDetails implements ModelInterface, Array
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['module_id'] = isset($data['module_id']) ? $data['module_id'] : null;
         $this->container['module_name'] = isset($data['module_name']) ? $data['module_name'] : null;

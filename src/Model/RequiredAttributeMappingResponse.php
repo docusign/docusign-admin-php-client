@@ -192,7 +192,7 @@ class RequiredAttributeMappingResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['required_attribute_id'] = isset($data['required_attribute_id']) ? $data['required_attribute_id'] : null;
         $this->container['required_attribute_name'] = isset($data['required_attribute_name']) ? $data['required_attribute_name'] : null;

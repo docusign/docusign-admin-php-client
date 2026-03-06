@@ -69,7 +69,8 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         'last_modified_on' => '\DateTime',
         'user_count' => '?int',
         'external_account_id' => 'int',
-        'account_name' => '?string'
+        'account_name' => '?string',
+        'is_managed_by_scim' => '?bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         'last_modified_on' => 'date-time',
         'user_count' => 'int32',
         'external_account_id' => 'int64',
-        'account_name' => null
+        'account_name' => null,
+        'is_managed_by_scim' => null
     ];
 
     /**
@@ -128,7 +130,8 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         'last_modified_on' => 'last_modified_on',
         'user_count' => 'user_count',
         'external_account_id' => 'external_account_id',
-        'account_name' => 'account_name'
+        'account_name' => 'account_name',
+        'is_managed_by_scim' => 'is_managed_by_scim'
     ];
 
     /**
@@ -147,7 +150,8 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         'last_modified_on' => 'setLastModifiedOn',
         'user_count' => 'setUserCount',
         'external_account_id' => 'setExternalAccountId',
-        'account_name' => 'setAccountName'
+        'account_name' => 'setAccountName',
+        'is_managed_by_scim' => 'setIsManagedByScim'
     ];
 
     /**
@@ -166,7 +170,8 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         'last_modified_on' => 'getLastModifiedOn',
         'user_count' => 'getUserCount',
         'external_account_id' => 'getExternalAccountId',
-        'account_name' => 'getAccountName'
+        'account_name' => 'getAccountName',
+        'is_managed_by_scim' => 'getIsManagedByScim'
     ];
 
     /**
@@ -227,7 +232,7 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ds_group_id'] = isset($data['ds_group_id']) ? $data['ds_group_id'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
@@ -240,6 +245,7 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
         $this->container['user_count'] = isset($data['user_count']) ? $data['user_count'] : null;
         $this->container['external_account_id'] = isset($data['external_account_id']) ? $data['external_account_id'] : null;
         $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
+        $this->container['is_managed_by_scim'] = isset($data['is_managed_by_scim']) ? $data['is_managed_by_scim'] : null;
     }
 
     /**
@@ -526,6 +532,30 @@ class DSGroupResponse implements ModelInterface, ArrayAccess
     public function setAccountName($account_name)
     {
         $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_managed_by_scim
+     *
+     * @return ?bool
+     */
+    public function getIsManagedByScim()
+    {
+        return $this->container['is_managed_by_scim'];
+    }
+
+    /**
+     * Sets is_managed_by_scim
+     *
+     * @param ?bool $is_managed_by_scim is_managed_by_scim
+     *
+     * @return $this
+     */
+    public function setIsManagedByScim($is_managed_by_scim)
+    {
+        $this->container['is_managed_by_scim'] = $is_managed_by_scim;
 
         return $this;
     }

@@ -187,7 +187,7 @@ class OrgReportConfigurationResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_account_limit_disabled'] = isset($data['is_account_limit_disabled']) ? $data['is_account_limit_disabled'] : null;
         $this->container['custom_dates_enabled'] = isset($data['custom_dates_enabled']) ? $data['custom_dates_enabled'] : null;

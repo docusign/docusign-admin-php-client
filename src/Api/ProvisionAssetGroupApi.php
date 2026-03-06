@@ -325,7 +325,7 @@ class ProvisionAssetGroupApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -573,7 +573,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\AssetGroupAccountClone
      */
-    public function getAssetGroupAccountClone($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountCloneOptions $options = null)
+    public function getAssetGroupAccountClone($organization_id, $asset_group_id, $asset_group_work_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountCloneOptions $options = null)
     {
         list($response) = $this->getAssetGroupAccountCloneWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, $options);
         return $response;
@@ -592,7 +592,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\AssetGroupAccountClone, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssetGroupAccountCloneWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountCloneOptions $options = null): array
+    public function getAssetGroupAccountCloneWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountCloneOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -683,7 +683,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\AssetGroupAccountClones
      */
-    public function getAssetGroupAccountClonesByOrgId($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountClonesByOrgIdOptions $options = null)
+    public function getAssetGroupAccountClonesByOrgId($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountClonesByOrgIdOptions $options = null)
     {
         list($response) = $this->getAssetGroupAccountClonesByOrgIdWithHttpInfo($organization_id, $options);
         return $response;
@@ -700,7 +700,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\AssetGroupAccountClones, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssetGroupAccountClonesByOrgIdWithHttpInfo($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountClonesByOrgIdOptions $options = null): array
+    public function getAssetGroupAccountClonesByOrgIdWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountClonesByOrgIdOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -778,7 +778,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\AssetGroupAccountsResponse
      */
-    public function getAssetGroupAccounts($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountsOptions $options = null)
+    public function getAssetGroupAccounts($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountsOptions $options = null)
     {
         list($response) = $this->getAssetGroupAccountsWithHttpInfo($organization_id, $options);
         return $response;
@@ -795,7 +795,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\AssetGroupAccountsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssetGroupAccountsWithHttpInfo($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountsOptions $options = null): array
+    public function getAssetGroupAccountsWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetAssetGroupAccountsOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -955,7 +955,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\SubAccountCreateWorker
      */
-    public function getSubAccountCreateProcessByAssetGroupWorkId($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null)
+    public function getSubAccountCreateProcessByAssetGroupWorkId($organization_id, $asset_group_id, $asset_group_work_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null)
     {
         list($response) = $this->getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, $options);
         return $response;
@@ -974,7 +974,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\SubAccountCreateWorker, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null): array
+    public function getSubAccountCreateProcessByAssetGroupWorkIdWithHttpInfo($organization_id, $asset_group_id, $asset_group_work_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessByAssetGroupWorkIdOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1065,7 +1065,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\SubAccountCreateWorkerResponse
      */
-    public function getSubAccountCreateProcessesByOrgId($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null)
+    public function getSubAccountCreateProcessesByOrgId($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null)
     {
         list($response) = $this->getSubAccountCreateProcessesByOrgIdWithHttpInfo($organization_id, $options);
         return $response;
@@ -1082,7 +1082,7 @@ class ProvisionAssetGroupApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\SubAccountCreateWorkerResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubAccountCreateProcessesByOrgIdWithHttpInfo($organization_id, \DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null): array
+    public function getSubAccountCreateProcessesByOrgIdWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\ProvisionAssetGroupApi\GetSubAccountCreateProcessesByOrgIdOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {

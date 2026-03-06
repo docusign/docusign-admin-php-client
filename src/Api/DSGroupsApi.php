@@ -202,7 +202,7 @@ class DSGroupsApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -682,7 +682,7 @@ class DSGroupsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupAndUsersResponse
      */
-    public function getDSGroupUsers($organization_id, $account_id, $ds_group_id, \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions $options = null)
+    public function getDSGroupUsers($organization_id, $account_id, $ds_group_id, ?\DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions $options = null)
     {
         list($response) = $this->getDSGroupUsersWithHttpInfo($organization_id, $account_id, $ds_group_id, $options);
         return $response;
@@ -701,7 +701,7 @@ class DSGroupsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupAndUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDSGroupUsersWithHttpInfo($organization_id, $account_id, $ds_group_id, \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions $options = null): array
+    public function getDSGroupUsersWithHttpInfo($organization_id, $account_id, $ds_group_id, ?\DocuSign\Admin\Api\DSGroupsApi\GetDSGroupUsersOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -796,7 +796,7 @@ class DSGroupsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\DSGroupListResponse
      */
-    public function getDSGroups($organization_id, $account_id, \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions $options = null)
+    public function getDSGroups($organization_id, $account_id, ?\DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions $options = null)
     {
         list($response) = $this->getDSGroupsWithHttpInfo($organization_id, $account_id, $options);
         return $response;
@@ -814,7 +814,7 @@ class DSGroupsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\DSGroupListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDSGroupsWithHttpInfo($organization_id, $account_id, \DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions $options = null): array
+    public function getDSGroupsWithHttpInfo($organization_id, $account_id, ?\DocuSign\Admin\Api\DSGroupsApi\GetDSGroupsOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {

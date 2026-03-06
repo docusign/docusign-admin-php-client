@@ -65,7 +65,8 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         'company_name' => '?string',
         'job_title' => '?string',
         'send_activation' => '?bool',
-        'access_code' => '?string'
+        'access_code' => '?string',
+        'license_type' => '?string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         'company_name' => null,
         'job_title' => null,
         'send_activation' => null,
-        'access_code' => null
+        'access_code' => null,
+        'license_type' => null
     ];
 
     /**
@@ -116,7 +118,8 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         'company_name' => 'company_name',
         'job_title' => 'job_title',
         'send_activation' => 'send_activation',
-        'access_code' => 'access_code'
+        'access_code' => 'access_code',
+        'license_type' => 'license_type'
     ];
 
     /**
@@ -131,7 +134,8 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         'company_name' => 'setCompanyName',
         'job_title' => 'setJobTitle',
         'send_activation' => 'setSendActivation',
-        'access_code' => 'setAccessCode'
+        'access_code' => 'setAccessCode',
+        'license_type' => 'setLicenseType'
     ];
 
     /**
@@ -146,7 +150,8 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         'company_name' => 'getCompanyName',
         'job_title' => 'getJobTitle',
         'send_activation' => 'getSendActivation',
-        'access_code' => 'getAccessCode'
+        'access_code' => 'getAccessCode',
+        'license_type' => 'getLicenseType'
     ];
 
     /**
@@ -207,7 +212,7 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['permission_profile'] = isset($data['permission_profile']) ? $data['permission_profile'] : null;
@@ -216,6 +221,7 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
         $this->container['job_title'] = isset($data['job_title']) ? $data['job_title'] : null;
         $this->container['send_activation'] = isset($data['send_activation']) ? $data['send_activation'] : null;
         $this->container['access_code'] = isset($data['access_code']) ? $data['access_code'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
     }
 
     /**
@@ -409,6 +415,30 @@ class UpdateMembershipRequest implements ModelInterface, ArrayAccess
     public function setAccessCode($access_code)
     {
         $this->container['access_code'] = $access_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
 
         return $this;
     }

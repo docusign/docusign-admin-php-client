@@ -182,7 +182,7 @@ class DSGroupAndUsersResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['group'] = isset($data['group']) ? $data['group'] : null;
         $this->container['group_users'] = isset($data['group_users']) ? $data['group_users'] : null;
