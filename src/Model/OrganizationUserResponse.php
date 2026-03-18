@@ -67,9 +67,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         'membership_status' => '?string',
         'email' => '?string',
         'created_on' => '\DateTime',
+        'closed_on' => '\DateTime',
         'membership_created_on' => '\DateTime',
+        'membership_closed_on' => '\DateTime',
         'ds_groups' => '\DocuSign\Admin\Model\DSGroupResponse[]',
-        'membership_id' => '?string'
+        'membership_id' => '?string',
+        'is_membership_managed_by_scim' => '?bool',
+        'is_managed_by_scim' => '?bool',
+        'license_type' => '?string',
+        'subscription_id' => '?string',
+        'plan_name' => '?string'
     ];
 
     /**
@@ -86,9 +93,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         'membership_status' => null,
         'email' => null,
         'created_on' => 'date-time',
+        'closed_on' => 'date-time',
         'membership_created_on' => 'date-time',
+        'membership_closed_on' => 'date-time',
         'ds_groups' => null,
-        'membership_id' => 'uuid'
+        'membership_id' => 'uuid',
+        'is_membership_managed_by_scim' => null,
+        'is_managed_by_scim' => null,
+        'license_type' => null,
+        'subscription_id' => null,
+        'plan_name' => null
     ];
 
     /**
@@ -126,9 +140,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         'membership_status' => 'membership_status',
         'email' => 'email',
         'created_on' => 'created_on',
+        'closed_on' => 'closed_on',
         'membership_created_on' => 'membership_created_on',
+        'membership_closed_on' => 'membership_closed_on',
         'ds_groups' => 'ds_groups',
-        'membership_id' => 'membership_id'
+        'membership_id' => 'membership_id',
+        'is_membership_managed_by_scim' => 'is_membership_managed_by_scim',
+        'is_managed_by_scim' => 'is_managed_by_scim',
+        'license_type' => 'license_type',
+        'subscription_id' => 'subscription_id',
+        'plan_name' => 'plan_name'
     ];
 
     /**
@@ -145,9 +166,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         'membership_status' => 'setMembershipStatus',
         'email' => 'setEmail',
         'created_on' => 'setCreatedOn',
+        'closed_on' => 'setClosedOn',
         'membership_created_on' => 'setMembershipCreatedOn',
+        'membership_closed_on' => 'setMembershipClosedOn',
         'ds_groups' => 'setDsGroups',
-        'membership_id' => 'setMembershipId'
+        'membership_id' => 'setMembershipId',
+        'is_membership_managed_by_scim' => 'setIsMembershipManagedByScim',
+        'is_managed_by_scim' => 'setIsManagedByScim',
+        'license_type' => 'setLicenseType',
+        'subscription_id' => 'setSubscriptionId',
+        'plan_name' => 'setPlanName'
     ];
 
     /**
@@ -164,9 +192,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         'membership_status' => 'getMembershipStatus',
         'email' => 'getEmail',
         'created_on' => 'getCreatedOn',
+        'closed_on' => 'getClosedOn',
         'membership_created_on' => 'getMembershipCreatedOn',
+        'membership_closed_on' => 'getMembershipClosedOn',
         'ds_groups' => 'getDsGroups',
-        'membership_id' => 'getMembershipId'
+        'membership_id' => 'getMembershipId',
+        'is_membership_managed_by_scim' => 'getIsMembershipManagedByScim',
+        'is_managed_by_scim' => 'getIsManagedByScim',
+        'license_type' => 'getLicenseType',
+        'subscription_id' => 'getSubscriptionId',
+        'plan_name' => 'getPlanName'
     ];
 
     /**
@@ -227,7 +262,7 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
@@ -237,9 +272,16 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
         $this->container['membership_status'] = isset($data['membership_status']) ? $data['membership_status'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['created_on'] = isset($data['created_on']) ? $data['created_on'] : null;
+        $this->container['closed_on'] = isset($data['closed_on']) ? $data['closed_on'] : null;
         $this->container['membership_created_on'] = isset($data['membership_created_on']) ? $data['membership_created_on'] : null;
+        $this->container['membership_closed_on'] = isset($data['membership_closed_on']) ? $data['membership_closed_on'] : null;
         $this->container['ds_groups'] = isset($data['ds_groups']) ? $data['ds_groups'] : null;
         $this->container['membership_id'] = isset($data['membership_id']) ? $data['membership_id'] : null;
+        $this->container['is_membership_managed_by_scim'] = isset($data['is_membership_managed_by_scim']) ? $data['is_membership_managed_by_scim'] : null;
+        $this->container['is_managed_by_scim'] = isset($data['is_managed_by_scim']) ? $data['is_managed_by_scim'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['plan_name'] = isset($data['plan_name']) ? $data['plan_name'] : null;
     }
 
     /**
@@ -459,6 +501,30 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets closed_on
+     *
+     * @return \DateTime
+     */
+    public function getClosedOn()
+    {
+        return $this->container['closed_on'];
+    }
+
+    /**
+     * Sets closed_on
+     *
+     * @param \DateTime $closed_on closed_on
+     *
+     * @return $this
+     */
+    public function setClosedOn($closed_on)
+    {
+        $this->container['closed_on'] = $closed_on;
+
+        return $this;
+    }
+
+    /**
      * Gets membership_created_on
      *
      * @return \DateTime
@@ -478,6 +544,30 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
     public function setMembershipCreatedOn($membership_created_on)
     {
         $this->container['membership_created_on'] = $membership_created_on;
+
+        return $this;
+    }
+
+    /**
+     * Gets membership_closed_on
+     *
+     * @return \DateTime
+     */
+    public function getMembershipClosedOn()
+    {
+        return $this->container['membership_closed_on'];
+    }
+
+    /**
+     * Sets membership_closed_on
+     *
+     * @param \DateTime $membership_closed_on membership_closed_on
+     *
+     * @return $this
+     */
+    public function setMembershipClosedOn($membership_closed_on)
+    {
+        $this->container['membership_closed_on'] = $membership_closed_on;
 
         return $this;
     }
@@ -526,6 +616,126 @@ class OrganizationUserResponse implements ModelInterface, ArrayAccess
     public function setMembershipId($membership_id)
     {
         $this->container['membership_id'] = $membership_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_membership_managed_by_scim
+     *
+     * @return ?bool
+     */
+    public function getIsMembershipManagedByScim()
+    {
+        return $this->container['is_membership_managed_by_scim'];
+    }
+
+    /**
+     * Sets is_membership_managed_by_scim
+     *
+     * @param ?bool $is_membership_managed_by_scim is_membership_managed_by_scim
+     *
+     * @return $this
+     */
+    public function setIsMembershipManagedByScim($is_membership_managed_by_scim)
+    {
+        $this->container['is_membership_managed_by_scim'] = $is_membership_managed_by_scim;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_managed_by_scim
+     *
+     * @return ?bool
+     */
+    public function getIsManagedByScim()
+    {
+        return $this->container['is_managed_by_scim'];
+    }
+
+    /**
+     * Sets is_managed_by_scim
+     *
+     * @param ?bool $is_managed_by_scim is_managed_by_scim
+     *
+     * @return $this
+     */
+    public function setIsManagedByScim($is_managed_by_scim)
+    {
+        $this->container['is_managed_by_scim'] = $is_managed_by_scim;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     *
+     * @return ?string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     *
+     * @param ?string $subscription_id subscription_id
+     *
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_name
+     *
+     * @return ?string
+     */
+    public function getPlanName()
+    {
+        return $this->container['plan_name'];
+    }
+
+    /**
+     * Sets plan_name
+     *
+     * @param ?string $plan_name plan_name
+     *
+     * @return $this
+     */
+    public function setPlanName($plan_name)
+    {
+        $this->container['plan_name'] = $plan_name;
 
         return $this;
     }

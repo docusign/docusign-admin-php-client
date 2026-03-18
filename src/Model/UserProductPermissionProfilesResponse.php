@@ -187,7 +187,7 @@ class UserProductPermissionProfilesResponse implements ModelInterface, ArrayAcce
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;

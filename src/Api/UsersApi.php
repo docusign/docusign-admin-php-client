@@ -71,6 +71,33 @@ class GetUserDSProfileOptions
         $this->sort = $sort;
         return $this;
     }
+    /**
+      * $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+      * @var ?bool
+      */
+    protected ?bool $include_license = null;
+
+    /**
+     * Gets include_license
+     *
+     * @return ?bool
+     */
+    public function getIncludeLicense(): ?bool
+    {
+        return $this->include_license;
+    }
+
+    /**
+     * Sets include_license
+     * @param ?bool $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+     *
+     * @return self
+     */
+    public function setIncludeLicense(?bool $include_license): self
+    {
+        $this->include_license = $include_license;
+        return $this;
+    }
 }
 
 
@@ -139,6 +166,33 @@ class GetUserDSProfilesByEmailOptions
         $this->sort = $sort;
         return $this;
     }
+    /**
+      * $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+      * @var ?bool
+      */
+    protected ?bool $include_license = null;
+
+    /**
+     * Gets include_license
+     *
+     * @return ?bool
+     */
+    public function getIncludeLicense(): ?bool
+    {
+        return $this->include_license;
+    }
+
+    /**
+     * Sets include_license
+     * @param ?bool $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+     *
+     * @return self
+     */
+    public function setIncludeLicense(?bool $include_license): self
+    {
+        $this->include_license = $include_license;
+        return $this;
+    }
 }
 
 
@@ -178,6 +232,33 @@ class GetUserProfilesOptions
     public function setEmail(?string $email): self
     {
         $this->email = $email;
+        return $this;
+    }
+    /**
+      * $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+      * @var ?bool
+      */
+    protected ?bool $include_license = null;
+
+    /**
+     * Gets include_license
+     *
+     * @return ?bool
+     */
+    public function getIncludeLicense(): ?bool
+    {
+        return $this->include_license;
+    }
+
+    /**
+     * Sets include_license
+     * @param ?bool $include_license When true: additional details about the user's license will be included in the response. The account must have an IAM plan with licenses.
+     *
+     * @return self
+     */
+    public function setIncludeLicense(?bool $include_license): self
+    {
+        $this->include_license = $include_license;
         return $this;
     }
 }
@@ -491,6 +572,74 @@ class GetUsersOptions
         $this->include_ds_groups = $include_ds_groups;
         return $this;
     }
+    /**
+      * $include_license When true: additional details about the user's license will be included in the response; account_id must be specified and the account must have an IAM plan with licenses.
+      * @var ?bool
+      */
+    protected ?bool $include_license = null;
+
+    /**
+     * Gets include_license
+     *
+     * @return ?bool
+     */
+    public function getIncludeLicense(): ?bool
+    {
+        return $this->include_license;
+    }
+
+    /**
+     * Sets include_license
+     * @param ?bool $include_license When true: additional details about the user's license will be included in the response; account_id must be specified and the account must have an IAM plan with licenses.
+     *
+     * @return self
+     */
+    public function setIncludeLicense(?bool $include_license): self
+    {
+        $this->include_license = $include_license;
+        return $this;
+    }
+}
+
+
+/**
+ * UpdateUserOptions Class Doc Comment
+ *
+ * @category Class
+ * @package  DocuSign\Admin
+ * @author   Swagger Codegen team <apihelp@docusign.com>
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
+ * @link     https://github.com/swagger-api/swagger-codegen
+ */
+class UpdateUserOptions
+{
+    /**
+      * $apply_license_override If an account has an IAM plan with licenses, this query specifies how a user's license is handled. Values: true - Updates the user's existing license; false - Adds a license to the user
+      * @var ?bool
+      */
+    protected ?bool $apply_license_override = null;
+
+    /**
+     * Gets apply_license_override
+     *
+     * @return ?bool
+     */
+    public function getApplyLicenseOverride(): ?bool
+    {
+        return $this->apply_license_override;
+    }
+
+    /**
+     * Sets apply_license_override
+     * @param ?bool $apply_license_override If an account has an IAM plan with licenses, this query specifies how a user's license is handled. Values: true - Updates the user's existing license; false - Adds a license to the user
+     *
+     * @return self
+     */
+    public function setApplyLicenseOverride(?bool $apply_license_override): self
+    {
+        $this->apply_license_override = $apply_license_override;
+        return $this;
+    }
 }
 
 
@@ -527,7 +676,7 @@ class UsersApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -1210,7 +1359,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersDrilldownResponse
      */
-    public function getUserDSProfile($organization_id, $user_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null)
+    public function getUserDSProfile($organization_id, $user_id, ?\DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null)
     {
         list($response) = $this->getUserDSProfileWithHttpInfo($organization_id, $user_id, $options);
         return $response;
@@ -1228,7 +1377,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserDSProfileWithHttpInfo($organization_id, $user_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null): array
+    public function getUserDSProfileWithHttpInfo($organization_id, $user_id, ?\DocuSign\Admin\Api\UsersApi\GetUserDSProfileOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1250,6 +1399,9 @@ class UsersApi
             // query params
             if ($options->getSort() != 'null') {
                 $queryParams['sort'] = $this->apiClient->getSerializer()->toQueryValue($options->getSort());
+            }
+            if ($options->getIncludeLicense() != 'null') {
+                $queryParams['include_license'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeLicense());
             }
         }
 
@@ -1311,7 +1463,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersDrilldownResponse
      */
-    public function getUserDSProfilesByEmail($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null)
+    public function getUserDSProfilesByEmail($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null)
     {
         list($response) = $this->getUserDSProfilesByEmailWithHttpInfo($organization_id, $options);
         return $response;
@@ -1328,7 +1480,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserDSProfilesByEmailWithHttpInfo($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null): array
+    public function getUserDSProfilesByEmailWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUserDSProfilesByEmailOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1349,6 +1501,9 @@ class UsersApi
             }
             if ($options->getSort() != 'null') {
                 $queryParams['sort'] = $this->apiClient->getSerializer()->toQueryValue($options->getSort());
+            }
+            if ($options->getIncludeLicense() != 'null') {
+                $queryParams['include_license'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeLicense());
             }
         }
 
@@ -1406,7 +1561,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersDrilldownResponse
      */
-    public function getUserProfiles($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions $options = null)
+    public function getUserProfiles($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions $options = null)
     {
         list($response) = $this->getUserProfilesWithHttpInfo($organization_id, $options);
         return $response;
@@ -1423,7 +1578,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersDrilldownResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserProfilesWithHttpInfo($organization_id, \DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions $options = null): array
+    public function getUserProfilesWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUserProfilesOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1441,6 +1596,9 @@ class UsersApi
             // query params
             if ($options->getEmail() != 'null') {
                 $queryParams['email'] = $this->apiClient->getSerializer()->toQueryValue($options->getEmail());
+            }
+            if ($options->getIncludeLicense() != 'null') {
+                $queryParams['include_license'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeLicense());
             }
         }
 
@@ -1498,7 +1656,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationUsersResponse
      */
-    public function getUsers($organization_id, \DocuSign\Admin\Api\UsersApi\GetUsersOptions $options = null)
+    public function getUsers($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUsersOptions $options = null)
     {
         list($response) = $this->getUsersWithHttpInfo($organization_id, $options);
         return $response;
@@ -1515,7 +1673,7 @@ class UsersApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationUsersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUsersWithHttpInfo($organization_id, \DocuSign\Admin\Api\UsersApi\GetUsersOptions $options = null): array
+    public function getUsersWithHttpInfo($organization_id, ?\DocuSign\Admin\Api\UsersApi\GetUsersOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1563,6 +1721,9 @@ class UsersApi
             }
             if ($options->getIncludeDsGroups() != 'null') {
                 $queryParams['include_ds_groups'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeDsGroups());
+            }
+            if ($options->getIncludeLicense() != 'null') {
+                $queryParams['include_license'] = $this->apiClient->getSerializer()->toQueryValue($options->getIncludeLicense());
             }
         }
 
@@ -1710,13 +1871,14 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersRequest $request The user details to update (required)
+     * @param  \DocuSign\Admin\Api\UsersApi\UpdateUserOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UsersUpdateResponse
      */
-    public function updateUser($organization_id, $request)
+    public function updateUser($organization_id, $request, ?\DocuSign\Admin\Api\UsersApi\UpdateUserOptions $options = null)
     {
-        list($response) = $this->updateUserWithHttpInfo($organization_id, $request);
+        list($response) = $this->updateUserWithHttpInfo($organization_id, $request, $options);
         return $response;
     }
 
@@ -1727,11 +1889,12 @@ class UsersApi
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\UpdateUsersRequest $request The user details to update (required)
+     * @param  \DocuSign\Admin\Api\UsersApi\UpdateUserOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UsersUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateUserWithHttpInfo($organization_id, $request): array
+    public function updateUserWithHttpInfo($organization_id, $request, ?\DocuSign\Admin\Api\UsersApi\UpdateUserOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -1748,6 +1911,13 @@ class UsersApi
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
+        if ($options != null)
+        {
+            // query params
+            if ($options->getApplyLicenseOverride() != 'null') {
+                $queryParams['apply_license_override'] = $this->apiClient->getSerializer()->toQueryValue($options->getApplyLicenseOverride());
+            }
+        }
 
         // path params
         if ($organization_id !== null) {

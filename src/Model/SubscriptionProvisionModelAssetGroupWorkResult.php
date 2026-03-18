@@ -187,7 +187,7 @@ class SubscriptionProvisionModelAssetGroupWorkResult implements ModelInterface, 
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['asset_group_work'] = isset($data['asset_group_work']) ? $data['asset_group_work'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;

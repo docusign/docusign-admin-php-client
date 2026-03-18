@@ -197,7 +197,7 @@ class OrgReportRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['report_type'] = isset($data['report_type']) ? $data['report_type'] : null;
         $this->container['report_date_range'] = isset($data['report_date_range']) ? $data['report_date_range'] : null;

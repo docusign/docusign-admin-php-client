@@ -182,7 +182,7 @@ class DSGroupUsersRemoveRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['user_ids'] = isset($data['user_ids']) ? $data['user_ids'] : null;
         $this->container['user_emails'] = isset($data['user_emails']) ? $data['user_emails'] : null;

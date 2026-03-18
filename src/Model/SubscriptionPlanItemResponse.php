@@ -192,7 +192,7 @@ class SubscriptionPlanItemResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['plan_item_id'] = isset($data['plan_item_id']) ? $data['plan_item_id'] : null;
         $this->container['plan_item_name'] = isset($data['plan_item_name']) ? $data['plan_item_name'] : null;

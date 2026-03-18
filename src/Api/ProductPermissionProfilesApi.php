@@ -107,7 +107,7 @@ class ProductPermissionProfilesApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -580,7 +580,7 @@ class ProductPermissionProfilesApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\UserProductPermissionProfilesResponse
      */
-    public function getUserProductPermissionProfilesByEmail($organization_id, $account_id, \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null)
+    public function getUserProductPermissionProfilesByEmail($organization_id, $account_id, ?\DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null)
     {
         list($response) = $this->getUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, $options);
         return $response;
@@ -598,7 +598,7 @@ class ProductPermissionProfilesApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\UserProductPermissionProfilesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, \DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null): array
+    public function getUserProductPermissionProfilesByEmailWithHttpInfo($organization_id, $account_id, ?\DocuSign\Admin\Api\ProductPermissionProfilesApi\GetUserProductPermissionProfilesByEmailOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {

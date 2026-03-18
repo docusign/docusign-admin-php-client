@@ -76,7 +76,11 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         'last_login' => '\DateTime',
         'memberships' => '\DocuSign\Admin\Model\MembershipResponse[]',
         'identities' => '\DocuSign\Admin\Model\UserIdentityResponse[]',
-        'device_verification_enabled' => '?bool'
+        'device_verification_enabled' => '?bool',
+        'require_two_step_verification' => '?bool',
+        'allow_two_step_verification_snooze' => '?bool',
+        'allow_extend_org_admin_rights_to_self' => '?bool',
+        'is_managed_by_scim' => '?bool'
     ];
 
     /**
@@ -102,7 +106,11 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         'last_login' => 'date-time',
         'memberships' => null,
         'identities' => null,
-        'device_verification_enabled' => null
+        'device_verification_enabled' => null,
+        'require_two_step_verification' => null,
+        'allow_two_step_verification_snooze' => null,
+        'allow_extend_org_admin_rights_to_self' => null,
+        'is_managed_by_scim' => null
     ];
 
     /**
@@ -149,7 +157,11 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         'last_login' => 'last_login',
         'memberships' => 'memberships',
         'identities' => 'identities',
-        'device_verification_enabled' => 'device_verification_enabled'
+        'device_verification_enabled' => 'device_verification_enabled',
+        'require_two_step_verification' => 'require_two_step_verification',
+        'allow_two_step_verification_snooze' => 'allow_two_step_verification_snooze',
+        'allow_extend_org_admin_rights_to_self' => 'allow_extend_org_admin_rights_to_self',
+        'is_managed_by_scim' => 'is_managed_by_scim'
     ];
 
     /**
@@ -175,7 +187,11 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         'last_login' => 'setLastLogin',
         'memberships' => 'setMemberships',
         'identities' => 'setIdentities',
-        'device_verification_enabled' => 'setDeviceVerificationEnabled'
+        'device_verification_enabled' => 'setDeviceVerificationEnabled',
+        'require_two_step_verification' => 'setRequireTwoStepVerification',
+        'allow_two_step_verification_snooze' => 'setAllowTwoStepVerificationSnooze',
+        'allow_extend_org_admin_rights_to_self' => 'setAllowExtendOrgAdminRightsToSelf',
+        'is_managed_by_scim' => 'setIsManagedByScim'
     ];
 
     /**
@@ -201,7 +217,11 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         'last_login' => 'getLastLogin',
         'memberships' => 'getMemberships',
         'identities' => 'getIdentities',
-        'device_verification_enabled' => 'getDeviceVerificationEnabled'
+        'device_verification_enabled' => 'getDeviceVerificationEnabled',
+        'require_two_step_verification' => 'getRequireTwoStepVerification',
+        'allow_two_step_verification_snooze' => 'getAllowTwoStepVerificationSnooze',
+        'allow_extend_org_admin_rights_to_self' => 'getAllowExtendOrgAdminRightsToSelf',
+        'is_managed_by_scim' => 'getIsManagedByScim'
     ];
 
     /**
@@ -262,7 +282,7 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['site_id'] = isset($data['site_id']) ? $data['site_id'] : null;
@@ -282,6 +302,10 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
         $this->container['memberships'] = isset($data['memberships']) ? $data['memberships'] : null;
         $this->container['identities'] = isset($data['identities']) ? $data['identities'] : null;
         $this->container['device_verification_enabled'] = isset($data['device_verification_enabled']) ? $data['device_verification_enabled'] : null;
+        $this->container['require_two_step_verification'] = isset($data['require_two_step_verification']) ? $data['require_two_step_verification'] : null;
+        $this->container['allow_two_step_verification_snooze'] = isset($data['allow_two_step_verification_snooze']) ? $data['allow_two_step_verification_snooze'] : null;
+        $this->container['allow_extend_org_admin_rights_to_self'] = isset($data['allow_extend_org_admin_rights_to_self']) ? $data['allow_extend_org_admin_rights_to_self'] : null;
+        $this->container['is_managed_by_scim'] = isset($data['is_managed_by_scim']) ? $data['is_managed_by_scim'] : null;
     }
 
     /**
@@ -736,6 +760,102 @@ class UserDrilldownResponse implements ModelInterface, ArrayAccess
     public function setDeviceVerificationEnabled($device_verification_enabled)
     {
         $this->container['device_verification_enabled'] = $device_verification_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets require_two_step_verification
+     *
+     * @return ?bool
+     */
+    public function getRequireTwoStepVerification()
+    {
+        return $this->container['require_two_step_verification'];
+    }
+
+    /**
+     * Sets require_two_step_verification
+     *
+     * @param ?bool $require_two_step_verification require_two_step_verification
+     *
+     * @return $this
+     */
+    public function setRequireTwoStepVerification($require_two_step_verification)
+    {
+        $this->container['require_two_step_verification'] = $require_two_step_verification;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_two_step_verification_snooze
+     *
+     * @return ?bool
+     */
+    public function getAllowTwoStepVerificationSnooze()
+    {
+        return $this->container['allow_two_step_verification_snooze'];
+    }
+
+    /**
+     * Sets allow_two_step_verification_snooze
+     *
+     * @param ?bool $allow_two_step_verification_snooze allow_two_step_verification_snooze
+     *
+     * @return $this
+     */
+    public function setAllowTwoStepVerificationSnooze($allow_two_step_verification_snooze)
+    {
+        $this->container['allow_two_step_verification_snooze'] = $allow_two_step_verification_snooze;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_extend_org_admin_rights_to_self
+     *
+     * @return ?bool
+     */
+    public function getAllowExtendOrgAdminRightsToSelf()
+    {
+        return $this->container['allow_extend_org_admin_rights_to_self'];
+    }
+
+    /**
+     * Sets allow_extend_org_admin_rights_to_self
+     *
+     * @param ?bool $allow_extend_org_admin_rights_to_self allow_extend_org_admin_rights_to_self
+     *
+     * @return $this
+     */
+    public function setAllowExtendOrgAdminRightsToSelf($allow_extend_org_admin_rights_to_self)
+    {
+        $this->container['allow_extend_org_admin_rights_to_self'] = $allow_extend_org_admin_rights_to_self;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_managed_by_scim
+     *
+     * @return ?bool
+     */
+    public function getIsManagedByScim()
+    {
+        return $this->container['is_managed_by_scim'];
+    }
+
+    /**
+     * Sets is_managed_by_scim
+     *
+     * @param ?bool $is_managed_by_scim is_managed_by_scim
+     *
+     * @return $this
+     */
+    public function setIsManagedByScim($is_managed_by_scim)
+    {
+        $this->container['is_managed_by_scim'] = $is_managed_by_scim;
 
         return $this;
     }

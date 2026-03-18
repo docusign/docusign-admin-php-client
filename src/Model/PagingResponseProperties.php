@@ -202,7 +202,7 @@ class PagingResponseProperties implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['result_set_size'] = isset($data['result_set_size']) ? $data['result_set_size'] : null;
         $this->container['result_set_start_position'] = isset($data['result_set_start_position']) ? $data['result_set_start_position'] : null;

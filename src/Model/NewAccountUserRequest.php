@@ -70,7 +70,8 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         'selected_languages' => '?string',
         'access_code' => '?string',
         'federated_status' => '?string',
-        'auto_activate_memberships' => '?bool'
+        'auto_activate_memberships' => '?bool',
+        'license_type' => '?string'
     ];
 
     /**
@@ -90,7 +91,8 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         'selected_languages' => null,
         'access_code' => null,
         'federated_status' => null,
-        'auto_activate_memberships' => null
+        'auto_activate_memberships' => null,
+        'license_type' => null
     ];
 
     /**
@@ -131,7 +133,8 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         'selected_languages' => 'selected_languages',
         'access_code' => 'access_code',
         'federated_status' => 'federated_status',
-        'auto_activate_memberships' => 'auto_activate_memberships'
+        'auto_activate_memberships' => 'auto_activate_memberships',
+        'license_type' => 'license_type'
     ];
 
     /**
@@ -151,7 +154,8 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         'selected_languages' => 'setSelectedLanguages',
         'access_code' => 'setAccessCode',
         'federated_status' => 'setFederatedStatus',
-        'auto_activate_memberships' => 'setAutoActivateMemberships'
+        'auto_activate_memberships' => 'setAutoActivateMemberships',
+        'license_type' => 'setLicenseType'
     ];
 
     /**
@@ -171,7 +175,8 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         'selected_languages' => 'getSelectedLanguages',
         'access_code' => 'getAccessCode',
         'federated_status' => 'getFederatedStatus',
-        'auto_activate_memberships' => 'getAutoActivateMemberships'
+        'auto_activate_memberships' => 'getAutoActivateMemberships',
+        'license_type' => 'getLicenseType'
     ];
 
     /**
@@ -232,7 +237,7 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['permission_profile'] = isset($data['permission_profile']) ? $data['permission_profile'] : null;
         $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
@@ -246,6 +251,7 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
         $this->container['access_code'] = isset($data['access_code']) ? $data['access_code'] : null;
         $this->container['federated_status'] = isset($data['federated_status']) ? $data['federated_status'] : null;
         $this->container['auto_activate_memberships'] = isset($data['auto_activate_memberships']) ? $data['auto_activate_memberships'] : null;
+        $this->container['license_type'] = isset($data['license_type']) ? $data['license_type'] : null;
     }
 
     /**
@@ -559,6 +565,30 @@ class NewAccountUserRequest implements ModelInterface, ArrayAccess
     public function setAutoActivateMemberships($auto_activate_memberships)
     {
         $this->container['auto_activate_memberships'] = $auto_activate_memberships;
+
+        return $this;
+    }
+
+    /**
+     * Gets license_type
+     *
+     * @return ?string
+     */
+    public function getLicenseType()
+    {
+        return $this->container['license_type'];
+    }
+
+    /**
+     * Sets license_type
+     *
+     * @param ?string $license_type license_type
+     *
+     * @return $this
+     */
+    public function setLicenseType($license_type)
+    {
+        $this->container['license_type'] = $license_type;
 
         return $this;
     }

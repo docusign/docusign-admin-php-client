@@ -294,7 +294,7 @@ class AssetGroupAccountClone implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['source_account'] = isset($data['source_account']) ? $data['source_account'] : null;
         $this->container['target_account'] = isset($data['target_account']) ? $data['target_account'] : null;

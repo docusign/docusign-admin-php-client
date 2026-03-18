@@ -212,7 +212,7 @@ class OrganizationSubscriptionResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['plan_id'] = isset($data['plan_id']) ? $data['plan_id'] : null;
         $this->container['plan_name'] = isset($data['plan_name']) ? $data['plan_name'] : null;

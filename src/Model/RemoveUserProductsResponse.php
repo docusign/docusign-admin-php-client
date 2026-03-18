@@ -192,7 +192,7 @@ class RemoveUserProductsResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_success'] = isset($data['is_success']) ? $data['is_success'] : null;
         $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;

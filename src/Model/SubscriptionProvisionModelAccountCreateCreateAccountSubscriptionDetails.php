@@ -187,7 +187,7 @@ class SubscriptionProvisionModelAccountCreateCreateAccountSubscriptionDetails im
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
         $this->container['plan_id'] = isset($data['plan_id']) ? $data['plan_id'] : null;

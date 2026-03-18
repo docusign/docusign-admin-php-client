@@ -202,7 +202,7 @@ class AccountsApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -261,7 +261,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\MemberGroupsResponse
      */
-    public function getGroups($organization_id, $account_id, \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions $options = null)
+    public function getGroups($organization_id, $account_id, ?\DocuSign\Admin\Api\AccountsApi\GetGroupsOptions $options = null)
     {
         list($response) = $this->getGroupsWithHttpInfo($organization_id, $account_id, $options);
         return $response;
@@ -279,7 +279,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\MemberGroupsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGroupsWithHttpInfo($organization_id, $account_id, \DocuSign\Admin\Api\AccountsApi\GetGroupsOptions $options = null): array
+    public function getGroupsWithHttpInfo($organization_id, $account_id, ?\DocuSign\Admin\Api\AccountsApi\GetGroupsOptions $options = null): array
     {
         // verify the required parameter 'organization_id' is set
         if ($organization_id === null) {
@@ -367,7 +367,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Admin\Model\OrganizationsResponse
      */
-    public function getOrganizations(\DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions $options = null)
+    public function getOrganizations(?\DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions $options = null)
     {
         list($response) = $this->getOrganizationsWithHttpInfo($options);
         return $response;
@@ -383,7 +383,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Admin\Model\OrganizationsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationsWithHttpInfo(\DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions $options = null): array
+    public function getOrganizationsWithHttpInfo(?\DocuSign\Admin\Api\AccountsApi\GetOrganizationsOptions $options = null): array
     {
         // parse inputs
         $resourcePath = "/v2/organizations";
