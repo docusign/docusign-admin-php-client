@@ -1,7 +1,12 @@
 # DocuSign Admin Java Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
-## [v2.1.0] - Admin API v2.1-1.4.3 - 2026-03-05
+## [v2.1.1] - Admin API v2.1-1.4.3 - 2026-06-09
+### Changed
+- Added support for version v2.1-26.1.1.00 of the DocuSign ESignature API.
+- Updated the SDK release version.
+
+## [v2.1.0] - Admin API v2.1-1.4.3 - 2026-03-09
 ### Changed
 - Added support for version v2.1-1.4.3 of the DocuSign Admin API.
 - Updated the SDK release version.
