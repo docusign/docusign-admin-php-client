@@ -116,7 +116,7 @@ class BulkExportsApi
     /**
      * Operation createAccountSettingsExport
      *
-     * Creates a  new Account Setting Export request.
+     * Creates a new Account Setting Export request.
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationAccountsRequest $request Request body containing details about the accounts be compared (required)
@@ -133,7 +133,7 @@ class BulkExportsApi
     /**
      * Operation createAccountSettingsExportWithHttpInfo
      *
-     * Creates a  new Account Setting Export request.
+     * Creates a new Account Setting Export request.
      *
      * @param ?string $organization_id The organization ID Guid
      * @param \DocuSign\Admin\Model\OrganizationAccountsRequest $request Request body containing details about the accounts be compared (required)

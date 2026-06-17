@@ -59,7 +59,8 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'users' => '\DocuSign\Admin\Model\UpdateUserRequest[]'
+        'users' => '\DocuSign\Admin\Model\UpdateUserRequest[]',
+        'auto_activate_memberships_on_reactivation' => '?bool'
     ];
 
     /**
@@ -68,7 +69,8 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'users' => null
+        'users' => null,
+        'auto_activate_memberships_on_reactivation' => null
     ];
 
     /**
@@ -98,7 +100,8 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'users' => 'users'
+        'users' => 'users',
+        'auto_activate_memberships_on_reactivation' => 'auto_activate_memberships_on_reactivation'
     ];
 
     /**
@@ -107,7 +110,8 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'users' => 'setUsers'
+        'users' => 'setUsers',
+        'auto_activate_memberships_on_reactivation' => 'setAutoActivateMembershipsOnReactivation'
     ];
 
     /**
@@ -116,7 +120,8 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'users' => 'getUsers'
+        'users' => 'getUsers',
+        'auto_activate_memberships_on_reactivation' => 'getAutoActivateMembershipsOnReactivation'
     ];
 
     /**
@@ -180,6 +185,7 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
     public function __construct(?array $data = null)
     {
         $this->container['users'] = isset($data['users']) ? $data['users'] : null;
+        $this->container['auto_activate_memberships_on_reactivation'] = isset($data['auto_activate_memberships_on_reactivation']) ? $data['auto_activate_memberships_on_reactivation'] : null;
     }
 
     /**
@@ -226,6 +232,30 @@ class UpdateUsersRequest implements ModelInterface, ArrayAccess
     public function setUsers($users)
     {
         $this->container['users'] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_activate_memberships_on_reactivation
+     *
+     * @return ?bool
+     */
+    public function getAutoActivateMembershipsOnReactivation()
+    {
+        return $this->container['auto_activate_memberships_on_reactivation'];
+    }
+
+    /**
+     * Sets auto_activate_memberships_on_reactivation
+     *
+     * @param ?bool $auto_activate_memberships_on_reactivation When set to **true**, the user's memberships will be automatically activated on reactivation.
+     *
+     * @return $this
+     */
+    public function setAutoActivateMembershipsOnReactivation($auto_activate_memberships_on_reactivation)
+    {
+        $this->container['auto_activate_memberships_on_reactivation'] = $auto_activate_memberships_on_reactivation;
 
         return $this;
     }
